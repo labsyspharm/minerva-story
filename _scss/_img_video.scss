@@ -1,0 +1,17 @@
+  #cycif-banner {
+    background-size: 400%;
+    background-repeat: no-repeat;
+    animation: video_to_img 6s steps(3) infinite;
+  }
+  @keyframes mymove {
+    from {top: 0px;}
+    to {top: 200px;}
+}
+  @keyframes video_to_img {
+      from {
+          background-position: 0% center;
+      }
+      to {
+          background-position: 100% center
+      }
+  }

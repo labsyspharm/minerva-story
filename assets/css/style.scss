@@ -1,0 +1,47 @@
+---
+---
+// @import "{{ site.theme }}";
+// @import "fonts";
+// @import "theme_customizations";
+@import "bootstrap/scss/functions";
+@import "variables";
+@import "bootstrap/scss/bootstrap";
+@import "img_video";
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-top: $headings-margin-bottom * 2.5;
+}
+
+body {
+  letter-spacing: 0.02em;
+}
+
+svg a:hover text {
+  text-decoration: underline;
+  fill: #0fabff;
+}
+
+.banner-text-container,
+.banner-tall {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.banner-tall {
+  min-height: 75vh;
+}
+@include media-breakpoint-down(sm) {
+  .banner-tall{
+    min-height: auto;
+  }
+}
+
+@include media-breakpoint-down(xs) { 
+  .display-4 {
+    font-size: 2rem;
+    margin-top: 1rem;
+  }  
+}
+
+.select2-results ul {
+  color: black;
+}

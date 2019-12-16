@@ -1,0 +1,12 @@
+theme: jekyll-theme-hacker
+title: CyCIF
+description: A Simple Approach to Highly Multiplexed Cell and Tissue Imaging
+sass:
+    load_paths:
+        - _scss
+        - node_modules
+plugins:
+    - jekyll-redirect-from
+exclude: []
+google_analytics: UA-41775478-2
+repository: labsyspharm/cycif.org
