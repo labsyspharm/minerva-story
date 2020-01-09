@@ -1,0 +1,31 @@
+Exhibit:
+  Groups:
+  - Channels:
+    - '0'
+    - '1'
+    Colors:
+    - 7f7fff
+    - 7fff00
+    Name: grey
+    Path: grey_0__0--1__1
+  Images:
+  - Description: ''
+    Height: 4078
+    MaxLevel: 3
+    Name: i0
+    Path: http://localhost:2020/api/out
+    Width: 7219
+  Layout:
+    Grid:
+    - - i0
+  Stories:
+  - Description: ''
+    Name: ''
+    Waypoints:
+      - Description: fully
+      Group: grey
+      Name: full
+      Pan:
+      - 0.8869875030691429
+      - 0.5074978333476617
+      Zoom: 0.5648981853442305
