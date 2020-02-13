@@ -21,7 +21,7 @@ const authenticate = function(username, pass) {
 
   return pass.then(function(password) {
 
-    const minervaPoolId = 'us-east-1_d3Wusx6qp'; 
+    const minervaPoolId = 'us-east-1_d3Wusx6qp';
     const minervaClientId = 'cvuuuuogh6nmqm8491iiu1lh5';
     const minervaPool = new CognitoUserPool({
       UserPoolId : minervaPoolId,
@@ -42,6 +42,29 @@ const authenticate = function(username, pass) {
       .then(response => response.getIdToken().getJwtToken());
   });
 }
+
+const omero_authenticate = function(username, pass) {
+
+  return pass.then(function(password) {
+    return fetch('https://omero.hms.harvard.edu/api/v0/token/',
+            {mode: 'no-cors'}
+          ).then(function(token){
+        return fetch('https://omero.hms.harvard.edu/api/v0/login/', {
+          method: 'POST',
+          body: JSON.stringify({
+            csrfmiddlewaretoken: token.data,
+            username: username,
+            password: password,
+            server: 1
+          })
+        }).then(function(session){
+          return 'csrftoken=' + token.data + ';sessionid=' + session.eventContext.sessionUuid + ';';
+        })
+    })
+  });
+}
+
+
 
 const pos_modulo = function(i, n) {
   return ((i % n) + n) % n;
@@ -286,17 +309,10 @@ HashState.prototype = {
   /*
    * Control keys
    */
-
-  get token() {
-    const username = 'john_hoffer@hms.harvard.edu'
-    const password = document.minerva_password;
+  get omero_cookie() {
+    const username = 'jth30'
     const pass = new Promise(function(resolve, reject) {
 
-      resolve('MEETING@lsp2');
-      /* 
-      if (password != undefined) {
-        resolve(password);
-      }
       const selector = '#password_modal';
       $(selector).modal('show');
       $(selector).find('form').submit(function(e){
@@ -306,7 +322,29 @@ HashState.prototype = {
        
         // Get password from form
         const p = formData.p;
-        document.minerva_password = p;
+        resolve(p);
+        return false;
+      });
+    });
+    return omero_authenticate(username, pass);
+  },
+
+
+  get token() {
+    const username = 'john_hoffer@hms.harvard.edu'
+    const pass = new Promise(function(resolve, reject) {
+
+      resolve('MEETING@lsp2');
+      /* 
+      const selector = '#password_modal';
+      $(selector).modal('show');
+      $(selector).find('form').submit(function(e){
+        $(selector).find('form').off();
+        $(this).closest('.modal').modal('hide');
+        const formData = parseForm(e.target);
+       
+        // Get password from form
+        const p = formData.p;
         resolve(p);
         return false;
       });
@@ -989,6 +1027,12 @@ const getAjaxHeaders = function(state, image){
       };
     });  
   }
+  if (image.Provider == 'omero') {
+    /*return state.omero_cookie.then(function(cookie){
+      //document.cookie = cookie;
+      return {};
+    })*/
+  }
   return Promise.resolve({});
 };
 
@@ -1003,42 +1047,72 @@ const getGetTileUrl = function(image, layer, channelSettings) {
     return image.Path + '/' + layer.Path + '/' + (image.MaxLevel - level) + '_' + x + '_' + y + fileExt;
   };
 
-  if (image.Provider != 'minerva') {
+  if (image.Provider == 'minerva') {
+    const channelList = channels.reduce(function(list, c, i) {
+      const settings = channelSettings[c];
+      if (settings == undefined) {
+        return list;
+      }
+      const allowed = settings.Images;
+      if (allowed.indexOf(image.Name) >= 0) {
+        const index = settings.Index;
+        const color = colors[i];
+        const min = settings.Range[0];
+        const max = settings.Range[1];
+        const specs = [index, color, min, max];
+        list.push(specs.join(','));
+      }
+      return list;
+    }, []);
+
+    let channelPath = channelList.join('/');
+    let api = image.Path + '/render-tile/';
+    if (image.Path.includes('/prerendered-tile/')) {
+      channelPath = layer.Path;
+      api = image.Path;
+    }
+
+    const getMinervaTile = function(level, x, y) {
+      const lod = (image.MaxLevel - level) + '/';
+      const pos = x + '/' + y + '/0/0/';
+      const url = api + pos + lod + channelPath;
+      return url; 
+    };
+
+    return getMinervaTile;
+  }
+  else if (image.Provider == 'omero') {
+    const channelList = channels.reduce(function(list, c, i) {
+      const settings = channelSettings[c];
+      if (settings == undefined) {
+        return list;
+      }
+      const allowed = settings.Images;
+      if (allowed.indexOf(image.Name) >= 0) {
+        const index = settings.Index;
+        const color = colors[i];
+        const min = Math.round(settings.Range[0] * 65535);
+        const max = Math.round(settings.Range[1] * 65535);
+        list.push(index + '|' + min + ':' + max + '$' + color);
+      }
+      return list;
+    }, []);
+    const channelPath = channelList.join(',');
+
+    const getOmeroTile = function(level, x, y) {
+      const api = image.Path + '?c=' + channelPath;
+      const lod = (image.MaxLevel - level);
+      const pos = lod + ',' + x + ',' + y + ',';
+      const trash = '&m=c&z=1&t=1&format=jpeg&tile=';
+      const url = api + trash + pos + image.TileSize.join(','); 
+      return url; 
+    };
+
+    return getOmeroTile; 
+  }
+  else {
     return getJpegTile; 
   }
-
-
-  const channelList = channels.reduce(function(list, c, i) {
-    const settings = channelSettings[c];
-    if (settings == undefined) {
-      return list;
-    }
-    const allowed = settings.Images;
-    if (allowed.indexOf(image.Name) >= 0) {
-      const index = settings.Index;
-      const color = colors[i];
-      const min = settings.Range[0];
-      const max = settings.Range[1];
-      const specs = [index, color, min, max];
-      list.push(specs.join(','));
-    }
-    return list;
-  }, []);
-  let channelPath = channelList.join('/');
-  let api = image.Path + '/render-tile/';
-  if (image.Path.includes('/prerendered-tile/')) {
-    channelPath = layer.Path;
-    api = image.Path;
-  }
-
-  const getMinervaTile = function(level, x, y) {
-    const lod = (image.MaxLevel - level) + '/';
-    const pos = x + '/' + y + '/0/0/';
-    const url = api + pos + lod + channelPath;
-    return url; 
-  };
-
-  return getMinervaTile;
 };
 
 const index_name = function(list, name) {

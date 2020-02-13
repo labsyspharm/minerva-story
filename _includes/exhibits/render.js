@@ -316,11 +316,11 @@ Render.prototype = {
     $('.arrow-switch').click(this, function(e) {
       const HS = e.data.hashstate;
       const THIS = e.data;
-      if (HS.drawing && HS.drawType === "arrow") {
+      HS.drawType = "arrow";
+      if (HS.drawing) {
         HS.cancelDrawing(HS);
       }
       else {
-        HS.drawType = "arrow";
         HS.startDrawing(HS);
       }
       HS.pushState();
@@ -330,11 +330,11 @@ Render.prototype = {
     $('.lasso-switch').click(this, function(e) {
       const HS = e.data.hashstate;
       const THIS = e.data;
-      if (HS.drawing && HS.drawType === "lasso") {
+      HS.drawType = "lasso";
+      if (HS.drawing) {
         HS.cancelDrawing(HS);
       }
       else {
-        HS.drawType = "lasso";
         HS.startDrawing(HS);
       }
       HS.pushState();
@@ -344,11 +344,11 @@ Render.prototype = {
     $('.draw-switch').click(this, function(e) {
       const HS = e.data.hashstate;
       const THIS = e.data;
-      if (HS.drawing && HS.drawType === "box") {
+      HS.drawType = "box";
+      if (HS.drawing) {
         HS.cancelDrawing(HS);
       }
       else {
-        HS.drawType = "box";
         HS.startDrawing(HS);
       }
       HS.pushState();
@@ -894,13 +894,6 @@ Render.prototype = {
       });
     });
 
-    wid_waypoint.innerHTML = this.showdown.makeHtml(md);
-
-    if (waypoint.Image) {
-      var img = document.createElement("img");
-      img.src = waypoint.Image;
-      wid_waypoint.appendChild(img);
-    }
 
     const allVis = ['VisMatrix', 'VisBarChart', 'VisScatterplot'];
     
@@ -926,6 +919,28 @@ Render.prototype = {
       THIS.newView(true);
     }
 
+    const chanAndMaskHandler = function(mask, chan) {
+      const re_mask = RegExp(mask,'gi');
+      const m = index_regex(HS.masks, re_mask);
+      if (m >= 0) {
+        HS.m = [m];
+      }
+      
+      const c = index_name(HS.cgs, chan);
+      if (c >= 0) {
+        HS.g = c;
+      }
+      else {
+        const re_chan = RegExp(chan,'gi');
+        const r_c = index_regex(HS.cgs, re_chan);
+        if (r_c >= 0) {
+          HS.g = r_c;
+        }
+      }
+      THIS.newView(true);
+    }
+
+
     //VIS
     const renderVis = function(visType, el, id) {
       const renderer = {
@@ -933,10 +948,32 @@ Render.prototype = {
         'VisBarChart': infovis.renderBarChart,
         'VisScatterplot': infovis.renderScatterplot
       }[visType]
+      const clickHandler = {
+        'VisMatrix': chanAndMaskHandler,
+        'VisBarChart': maskHandler,
+        'VisScatterplot': undefined
+      }[visType]
       const tmp = renderer(el, id, waypoint[visType], {
-        'clickHandler': maskHandler
+        'clickHandler': clickHandler
       });
       tmp.then(() => finish_waypoint(visType));
+    }
+
+    var cache = document.createElement('div');
+    Array.from(waypointVis).forEach(function(visType) {
+      var className = visType + '-' + HS.s + '-' + HS.w;
+      var visElems = wid_waypoint.getElementsByClassName(className);
+      if (visElems[0]) {
+        cache.appendChild(visElems[0]);
+      }
+    })
+
+    wid_waypoint.innerHTML = this.showdown.makeHtml(md);
+
+    if (waypoint.Image) {
+      var img = document.createElement("img");
+      img.src = waypoint.Image;
+      wid_waypoint.appendChild(img);
     }
 
     //some code to add text in between vis
@@ -945,14 +982,22 @@ Render.prototype = {
       const el = wid_code.filter(code => code.innerText == visType)[0];
       const new_div = document.createElement('div');
       new_div.style.cssText = 'position:relative';
-      new_div.id = visType;
-      if (el) {
+      new_div.className = visType + '-' + HS.s + '-' + HS.w;
+      new_div.id = visType + '-' + HS.s + '-' + HS.w;
+
+      const cache_divs = cache.getElementsByClassName(new_div.className);
+      if (cache_divs[0] && el) {
+        $(el).replaceWith(cache_divs[0]);
+        finish_waypoint(visType)
+      }
+      else if (el) {
         $(el).replaceWith(new_div);
+        renderVis(visType, wid_waypoint, new_div.id);
       }
       else {
         wid_waypoint.appendChild(new_div);
+        renderVis(visType, wid_waypoint, new_div.id);
       }
-      renderVis(visType, wid_waypoint, new_div.id);
     })
 
     finish_waypoint('');

@@ -4,18 +4,18 @@ Exhibit:
     - '0'
     - '1'
     Colors:
-    - ff007f
-    - 00ff7f
-    Name: MAGENTA
-    Path: e7f99c2c-1c47-4252-ba27-8b6ea25fe3d6
+    - 7f00ff
+    - ffa900
+    Name: purple_and_orange
+    Path: 5a19da7e-fd93-48b0-8629-116d11615bad
   Images:
   - Description: ''
-    Height: 2160
-    MaxLevel: 2
+    Height: 9539
+    MaxLevel: 4
     Name: i0
-    Path: https://3v21j4dh1d.execute-api.us-east-1.amazonaws.com/dev/image/0c18ba28-872c-4d83-9904-ecb8b12b514d/prerendered-tile/
+    Path: https://3v21j4dh1d.execute-api.us-east-1.amazonaws.com/dev/image/4b7274d1-44de-4bda-989d-9ed48d24c1ac/prerendered-tile/
     Provider: minerva
-    Width: 2560
+    Width: 11362
   Layout:
     Grid:
     - - i0
@@ -23,11 +23,12 @@ Exhibit:
   - Description: ''
     Name: ''
     Waypoints:
-    - Description: ''
-      Group: MAGENTA
-      Name: ''
+    - Arrows: []
+      Description: Hello
+      Group: purple_and_orange
+      Name: Hello
+      Overlays: []
       Pan:
-      - 0.5
-      - 0.5
-      Zoom: 0.5
-
+      - 0.46624832470716326
+      - 0.43676341795171836
+      Zoom: 0.8652798717525104
