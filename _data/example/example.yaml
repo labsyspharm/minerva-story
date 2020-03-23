@@ -1,34 +1,32 @@
 Exhibit:
-  Groups:
-  - Channels:
-    - '0'
-    - '1'
-    Colors:
-    - 7f00ff
-    - ffa900
-    Name: purple_and_orange
-    Path: 5a19da7e-fd93-48b0-8629-116d11615bad
+  PixelsPerMicron: 3.0769
   Images:
-  - Description: ''
-    Height: 9539
-    MaxLevel: 4
-    Name: i0
-    Path: https://3v21j4dh1d.execute-api.us-east-1.amazonaws.com/dev/image/4b7274d1-44de-4bda-989d-9ed48d24c1ac/prerendered-tile/
-    Provider: minerva
-    Width: 11362
+    - Name: i0
+      Description: 'Example'
+      Path: https://s3.amazonaws.com/www.cycif.org/Nature-protocol-2019/LUNG_3
+      Width: 14448
+      Height: 11101
+      MaxLevel: 4
   Layout:
     Grid:
-    - - i0
+      - [i0]
+  Groups:
+    - Path: Nuclei_0__DAPI
+      Name: Nuclei
+      Colors:
+        - FFFFFF
+      Channels:
+        - Hoechst
   Stories:
-  - Description: ''
-    Name: ''
-    Waypoints:
-    - Arrows: []
-      Description: Hello
-      Group: purple_and_orange
-      Name: Hello
-      Overlays: []
-      Pan:
-      - 0.46624832470716326
-      - 0.43676341795171836
-      Zoom: 0.8652798717525104
+    - Description: ''
+      Name: ''
+      Waypoints:
+        - Arrows: []
+          Description: ''
+          Group: Nuclei
+          Name: Nuclei
+          Overlays: []
+          Pan:
+            - 0.46624832470716326
+            - 0.43676341795171836
+          Zoom: 0.8652798717525104

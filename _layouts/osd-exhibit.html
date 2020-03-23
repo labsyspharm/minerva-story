@@ -59,7 +59,7 @@
                             </div>
                             <div class="col-2">
                                 <a class="btn text-light d-none" id="home-button"
-                                   href="/">
+                                    href="/">
                                     <i class="fas fa-home"></i>
                                 </a>
                                 <a class="btn text-light d-none" id="toc-button">
@@ -331,66 +331,25 @@
     <script src="https://api.html5media.info/1.2.2/html5media.min.js"></script>
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.551.0.min.js"></script>
 
-    <script>
-        {% include amazon-cognito-identity.min.js %}
+    <script> 
+       {% include openseadragon-scalebar.js %}
     </script>
-    <script>
-        {% include polyfills.js %}
+    <script> 
+       {% include openseadragon-svg-overlay.js %}
     </script>
-    <script>
-        {% include clipboard.js %}
-    </script>
-    <script>
-        {% include js-yaml.min.js %}
-    </script>
-    <script>
-        {% include links_alias.js %}
-    </script>
-    <script>
-        {% include lz-string.js %}
-    </script>
-    <script>
-        {% include d3.min.js %}
-    </script>
-    <script>
-        {% include colorbrewer.v1.min.js %}
-    </script>
-    <script>
-        {% include d3-legends.min.js %}
-    </script>
-    <script>
-        {% include openseadragon-svg-overlay.js %}
-    </script>
-    <script>
-        {% include infovis.js %}
-    </script>
-    <script>
-        {% include openseadragon-scalebar.js %}
-    </script>
-    <script>
-        {% include polly-speak.js %}
-    </script>
-    <script>
-        {% include exhibits/state.js %}
-    </script>
-    <script>
-        {% include exhibits/render.js %}
-    </script>
-    <script>
-        {% include exhibits/osd.js %}
-    </script>
-    <script>
-        {% include exhibits/main.js %}
+    <script> 
+       {% include bundle.js %}
     </script>
     <script>
         const exhibit = {{ exhibit | jsonify }};
         const marker_data = {{ marker_data | jsonify }};
         const cell_type_data = {{ cell_type_data | jsonify }};
+        const get_links_alias = MinervaStory.default.get_links_alias;
 
         [marker_links_map, marker_alias_map] = get_links_alias(marker_data);
         [cell_type_links_map, cell_type_alias_map] = get_links_alias(cell_type_data);
 
-        window.viewer = build_page(exhibit, {
+        window.viewer = MinervaStory.default.build_page(exhibit, {
           embedded: true
         });
     </script>
