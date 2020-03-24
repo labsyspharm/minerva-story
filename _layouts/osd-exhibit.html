@@ -19,6 +19,7 @@
   {% assign config_paper = site.data[page.paper] %}
   {% assign config_figure = config_paper[page.figure] %}
   {% assign exhibit = config_figure.Exhibit %}
+  {% assign speech_bucket = site.speech_bucket %}
 
     <div id="content" class="position-fixed w-100" style="top: 0;left: 0;">
         <div>
@@ -73,9 +74,11 @@
                                 <i class="fas fa-arrow-left" style="font-size: 25px"></i>
                             </div>
                             <div class="col-8">
-                              <audio style="height: 25px; width:100%" id="audioPlayback" controls>
-                                <source id="audioSource" type="audio/mp3" src="">
-                              </audio> 
+                              {% if speech_bucket %}
+                                <audio style="height: 25px; width:100%" id="audioPlayback" controls>
+                                  <source id="audioSource" type="audio/mp3" src="">
+                                </audio> 
+                              {% endif %}
                             </div>
                             <div class="col-2 text-center" id="rightArrow">
                                 <i class="fas fa-arrow-right" style="font-size: 25px;"></i>
@@ -341,6 +344,7 @@
        {% include bundle.js %}
     </script>
     <script>
+        const speech_bucket = "{{ speech_bucket }}";
         const exhibit = {{ exhibit | jsonify }};
         const marker_data = {{ marker_data | jsonify }};
         const cell_type_data = {{ cell_type_data | jsonify }};
