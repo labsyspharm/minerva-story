@@ -1,0 +1,92 @@
+Exhibit:
+  Groups:
+  - Channels:
+    - DNA_1
+    - KERATIN
+    - ASMA
+    Colors:
+    - 0101fe
+    - 41fb06
+    - ff0000
+    Name: Architecture
+    Path: Architecture_0__DNA_1--14__KERATIN--34__ASMA
+  - Channels:
+    - PD1
+    - PDL1
+    - CD68
+    Colors:
+    - fe0000
+    - 2bff00
+    - 000aff
+    Name: Checkpoint
+    Path: Checkpoint_15__PD1--19__PDL1--26__CD68
+  - Channels:
+    - CD3D
+    - CD4
+    - CD45
+    - CD8A
+    - CD20
+    Colors:
+    - 000aff
+    - 7fff00
+    - f5f5f5
+    - ff0000
+    - 00ceff
+    Name: Immune
+    Path: Immune_18__CD3D--21__CD4--22__CD45--23__CD8A--35__CD20
+  Header: 'Test Header'
+  Images:
+  - Description: ' Test title'
+    Height: 11101
+    MaxLevel: 4
+    Name: i0
+    Path: /images/Lung_test1
+    Width: 14448
+  Layout:
+    Grid:
+    - - i0
+  Stories:
+  - Description: ''
+    Name: ''
+    Waypoints:
+    - Arrows: []
+      Description: ''
+      Group: Architecture
+      Name: Alveola
+      Overlays:
+      - height: 0.05790929989141025
+        width: 0.07867359068912716
+        x: 1.0147796920855852
+        y: 0.26809754509521017
+      Pan:
+      - 1.045749589524222
+      - 0.2707409973092777
+      Zoom: 3.06710451228138
+    - Arrows:
+      - Angle: 60
+        HideArrow: false
+        Point:
+        - 0.875486003692676
+        - 0.618816898117438
+        Text: 'Macrophage with PD-L1'
+      Description: ''
+      Group: Checkpoint
+      Name: Macrophage with PD-L1
+      Overlays: []
+      Pan:
+      - 0.9027788086494792
+      - 0.5865400819946265
+      Zoom: 6.068520867594237
+    - Arrows: []
+      Description: Cluster of T and B cells
+      Group: Immune
+      Name: T/B cell cluster
+      Overlays:
+      - height: 0.17042175887087196
+        width: 0.15581417953908305
+        x: 0.7845818517031982
+        y: 0.6444901545294532
+      Pan:
+      - 0.7766373787332779
+      - 0.7107368081657245
+      Zoom: 2.4388024319999992
