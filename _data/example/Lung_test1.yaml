@@ -40,7 +40,7 @@ Exhibit:
     Height: 11101
     MaxLevel: 4
     Name: i0
-    Path: /images/Lung_test1
+    Path: https://s3-us-west-2.amazonaws.com/rarecyte.images/minerva/Lung_test1/  #/images/Lung_test1 #https://s3.amazonaws.com/bucketname/prefix ex. Lung_test1
     Width: 14448
   Layout:
     Grid:
