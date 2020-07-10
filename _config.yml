@@ -1,6 +1,6 @@
 theme: jekyll-theme-hacker
-title: CyCIF
-description: A Simple Approach to Highly Multiplexed Cell and Tissue Imaging
+title: RareCyte
+description: Orion - Spatial Biology Realized
 sass:
     load_paths:
         - _scss

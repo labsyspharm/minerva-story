@@ -1,5 +1,5 @@
 ---
 layout: osd-exhibit
 paper: example
-figure: Lung_test1
+figure: Orion_Tonsil_21
 ---
