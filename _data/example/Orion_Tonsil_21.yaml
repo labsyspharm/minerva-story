@@ -1,0 +1,184 @@
+Exhibit:
+  Groups:
+  - Channels:
+    - CD20
+    - CD31
+    - SMA
+    - E-cadherin
+    - Pan-Cytokeratin
+    Colors:
+    - d7d2d2
+    - 22ff00
+    - d0021b
+    - bd10e0
+    - 5bd0ff
+    Name: Tissue Architecture
+    Path: Tissue-Architecture_1__CD20--4__CD31--18__SMA--15__E-cadherin--19__Pan-Cytokeratin
+  - Channels:
+    - SYTOX Blue
+    - PD-L1
+    - PD-1
+    - CD20
+    - CD3e
+    - CD68
+    Colors:
+    - 9b9b9b
+    - 21d360
+    - f8e71c
+    - 2324f5
+    - bd10e0
+    - d0021b
+    Name: Immune Checkpoint Biomarkers
+    Path: Immune-Checkpoint-Biomarkers_2__SYTOX Blue--12__PD-L1--16__PD-1--1__CD20--3__CD3e--5__CD68
+  - Channels:
+    - SYTOX Blue
+    - CD4
+    - CD8a
+    - FoxP3
+    - CD45RO
+    - LAG3
+    Colors:
+    - 9b9b9b
+    - 00ff2e
+    - d0021b
+    - bd10e0
+    - 0203f9
+    - ffffff
+    Name: T Cell Subsets
+    Path: T-Cell-Subsets_2__SYTOX Blue--7__CD4--0__CD8a--8__FoxP3--9__CD45RO--11__LAG3
+  - Channels:
+    - CD20
+    - Ki67
+    - PCNA
+    - CD45
+    Colors:
+    - 1018e0
+    - 00ff00
+    - d0021b
+    - 6f6f74
+    Name: Cellular Proliferation
+    Path: Cellular-Proliferation_1__CD20--17__Ki67--20__PCNA--6__CD45
+  - Channels:
+    - CD163
+    - CD11b
+    - CD11c
+    - CD68
+    Colors:
+    - 16d002
+    - 50c7e3
+    - f8e71c
+    - d0021b
+    Name: Myeloid and Stromal Cells
+    Path: Myeloid-and-Stromal-Cells_14__CD163--10__CD11b--13__CD11c--5__CD68
+  Header: A 21-marker whole-slide scan of a single tonsil section stained with TissuePlex
+    reagents and imaged using the Orion Instrument.  All markers were stained in a
+    single staining procedure and imaged in a single scan.  Follow the waypoints below
+    to take a tour of this tonsil.
+  Images:
+  - Description: Orion - Deep Multiplexing of a Single Tonsil Section
+    Height: 27563
+    MaxLevel: 6
+    Name: i0
+    Path: https://s3-us-west-2.amazonaws.com/rarecyte.images/minerva/Orion_Tonsil_21
+    Width: 43956
+  Layout:
+    Grid:
+    - - i0
+  Stories:
+  - Description: ''
+    Name: ''
+    Waypoints:
+    - Arrows: []
+      Description: "Cancer tissue micro-environments contain numerous cell types,\
+        \ including epithelial, immune, vascular endothelial and smooth muscle cells\
+        \ in a spatial context for immune response. In tonsil, B cell follicles with\
+        \ germinal centers and interfollicular zones define the lymphoid compartments.\
+        \ Blood vessels are revealed by CD31 and smooth muscle actin (SMA). Note that\
+        \ venules are SMA negative. Cytokeratin and E-cadherin co-stain mucosal and\
+        \ crypt lining. \n\nDisplayed markers: CD20 (B cells, gray); CD31 (vascular\
+        \ endothelium and crypt sub-mucosa, green); SMA (arterioles, red); E-cadherin\
+        \ (mucosal and crypt epithelium, magenta); and pan-cytokeratin (mucosal and\
+        \ crypt epithelium, cyan).\n\n"
+      Group: Tissue Architecture
+      Name: Characterize Tissue Architecture
+      Overlays:
+      - height: 0.13467384689807765
+        width: 0.1677562038730407
+        x: 1.0772157005952967
+        y: 0.36382457865808676
+      Pan:
+      - 1.0833795863618791
+      - 0.4456046131276263
+      Zoom: 2.911937466056019
+    - Arrows: []
+      Description: 'PD-L1 and PD-1 are immune checkpoint markers often involved in
+        tumor evasion of the immune system, and their expression on tumor cells and
+        within the tumor microenvironment impacts response to checkpoint inhibitor
+        therapy.  In tonsil, PD-L1 is expressed by crypt-lining cells, and PD-1 is
+        found scattered in the follicles. CD68 positive macrophages are present adjacent
+        to the crypt lining.
+
+
+        Displayed markers: SYTOX blue (nucleus, gray); PD-1 (germinal centers, yellow);
+        PD-L1 (crypt sub-mucosa, green); CD20 (B cells, blue); CD3e (T cells, magenta),
+        and CD68 (macrophages, red).'
+      Group: Immune Checkpoint Biomarkers
+      Name: Immune Checkpoint Markers
+      Overlays:
+      - height: 0.06814620928957216
+        width: 0.15006474959042282
+        x: 0.222092303681106
+        y: 0.521589023250842
+      Pan:
+      - 0.27258751600484005
+      - 0.5305323247274343
+      Zoom: 4.044357591744471
+    - Arrows: []
+      Description: "Helper, cytotoxic, memory, regulatory and activated/exhausted\
+        \ T cells are simultaneously revealed. \n\nDisplayed markers: SYTOX blue (nucleus,\
+        \ gray); CD4 (helper T cells, green); CD8a (cytotoxic T cells, red); FoxP3\
+        \ (T reg cells, magenta); CD45RO (memory T cells, blue); and LAG-3 (activated/exhausted\
+        \ T cells, white).\n"
+      Group: T Cell Subsets
+      Name: Investigate T-Cell Subsets
+      Overlays:
+      - height: 0.061173097249770936
+        width: 0.08415182413547173
+        x: 0.4470470868303069
+        y: 0.5415804493701728
+      Pan:
+      - 0.46722298195532314
+      - 0.5524151120452422
+      Zoom: 5.5909199348275544
+    - Arrows: []
+      Description: 'Tonsil follicles are germinal centers rich in cell growth.  Both
+        Ki67 and PCNA are markers of cellular proliferation.
+
+
+        Displayed markers: CD20 (B cells, blue); Ki67 (cell proliferation, green);
+        PCNA (cell proliferation, red); and CD45 (leukocytes, gray).'
+      Group: Cellular Proliferation
+      Name: Cellular Proliferation in Follicles
+      Overlays:
+      - height: 0.0849851886856825
+        width: 0.0810778236886398
+        x: 1.1145386246295326
+        y: 0.39668248464208056
+      Pan:
+      - 1.1093288046334755
+      - 0.4404775339839361
+      Zoom: 3.882583288074691
+    - Arrows: []
+      Description: 'Displayed markers: CD163 ( ,green); CD11b ( ,cyan); CD11c ( ,yellow);
+        and CD68 (macrophages, red).'
+      Group: Myeloid and Stromal Cells
+      Name: Investigate Myeloid and Stromal Cells
+      Overlays:
+      - height: 0.07798449306598065
+        width: 0.11217393679010579
+        x: 0.8980181940447471
+        y: 0.70469135667086
+      Pan:
+      - 0.9250441352742936
+      - 0.7170646791614957
+      Zoom: 3.882583288074691
