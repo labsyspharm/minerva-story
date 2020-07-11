@@ -14,3 +14,13 @@ bundle install
 ```bash
 bundle exec jekyll serve
 ```
+
+##Public build instructions
+
+```bash
+git -pull
+git add -A
+git commit
+git push
+```
+
