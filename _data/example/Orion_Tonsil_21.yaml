@@ -169,9 +169,9 @@ Exhibit:
       - 0.4404775339839361
       Zoom: 3.882583288074691
     - Arrows: []
-      Description: 'CD11b highlights the follicular dendritic network.  Intrafollicular macrophages can be seen displaying both yellow (CD11c) and red (CD68).  In the T cell zone, you can see the green fibroblastic reticular cells.
-      
-        Displayed markers: CD163 (green); CD11b (cyan); CD11c (yellow);
+      Description: 'The follicular dendritic network is shown here in cyan.  Intrafollicular macrophages are co-stained with both yellow and red.  Green fibroblastic reticular cells are noticeable in the T cell zone.
+        
+        \n\nDisplayed markers: CD163 (green); CD11b (cyan); CD11c (yellow);
         and CD68 (macrophages, red).'
       Group: Myeloid and Stromal Cells
       Name: Investigate Myeloid and Stromal Cells
