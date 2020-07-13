@@ -168,15 +168,24 @@ Exhibit:
         PCNA (cell proliferation, red); and CD45 (leukocytes, gray).'
       Group: Cellular Proliferation
       Name: Cellular Proliferation in Follicles
+      #images.rarecyte.com/Orion_Tonsil#d=0#g=3#m=-1#a=-100_-100#v=5.5909_0.518_0.5257#o=0.4761_0.4907_0.0881_0.0742#p=Q
       Overlays:
-      - height: 0.0849851886856825
+      #- height: 0.0849851886856825
+       # width: 0.0810778236886398
+        #x: 1.1145386246295326
+        #y: 0.39668248464208056
+      #Pan:
+      #- 1.1093288046334755
+      #- 0.4404775339839361
+      #Zoom: 3.882583288074691
+      - height: 0.0649851886856825
         width: 0.0810778236886398
-        x: 1.1145386246295326
-        y: 0.39668248464208056
+        x: 0.478
+        y: 0.4957
       Pan:
-      - 1.1093288046334755
-      - 0.4404775339839361
-      Zoom: 3.882583288074691
+      - 0.518
+      - 0.5257
+      Zoom: 5.909
     - Arrows: []
       Description: 'The follicular dendritic network within the germinal center is shown here in cyan.  
       Intrafollicular macrophages are co-stained with both yellow and red.  Macrophages associated with the reticular network are present in the 
