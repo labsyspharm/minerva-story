@@ -141,15 +141,24 @@ Exhibit:
         \ T cells, white).\n"
       Group: T Cell Subsets
       Name: Investigate T Cell Subsets
+      #images.rarecyte.com/Orion_Tonsil#d=0#g=2#m=-1#a=-100_-100#v=6.471_0.4573_0.3164#o=0.4212_0.2816_0.0902_0.0737#p=Q
       Overlays:
-      - height: 0.061173097249770936
-        width: 0.08415182413547173
-        x: 0.4470470868303069
-        y: 0.5415804493701728
+      #- height: 0.061173097249770936
+       # width: 0.08415182413547173
+      #  x: 0.4470470868303069
+       # y: 0.5415804493701728
+      #Pan:
+      #- 0.46722298195532314
+      #- 0.5524151120452422
+      #Zoom: 5.5909199348275544
+      - height: 0.051173097249770936
+        width: 0.07415182413547173
+        x: 0.4300
+        y: 0.3000
       Pan:
-      - 0.46722298195532314
-      - 0.5524151120452422
-      Zoom: 5.5909199348275544
+      - 0.4573
+      - 0.3164
+      Zoom: 6.471
     - Arrows: []
       Description: 'Tonsil follicles contain germinal centers where expansion of B cells occurs in response to foreign antigens.  
         Germinal centers are easily visualized by Ki67 and PCNA which are nuclear markers of cellular proliferation.
