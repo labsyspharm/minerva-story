@@ -72,8 +72,8 @@ Exhibit:
     Path: Myeloid-and-Stromal-Cells_14__CD163--10__CD11b--13__CD11c--5__CD68
   Header: This is a 21-marker whole-slide scan of a single tonsil section stained with TissuePlex
     reagents and imaged using the Orion Instrument.  All markers were stained in a
-    single staining procedure and imaged in a single scan.  Follow the waypoints below
-    to take a tour of this tonsil.
+    single staining procedure and imaged in a single scan.  Use the arrow keys above to follow the waypoints for a tour of this tonsil.
+  PixelsPerMicron: 3.0769  
   Images:
   - Description: Orion - Deep Multiplexing of a Single Tonsil Section
     Height: 27563
@@ -111,7 +111,7 @@ Exhibit:
       - 0.4456046131276263
       Zoom: 2.911937466056019
     - Arrows: []
-      Description: 'PD-L1 and PD-1 are immune checkpoint markers often involved in
+      Description: 'PD-L1 and PD-1 are immune checkpoint markers involved in
         tumor evasion of the immune system, and their expression on tumor cells and
         within the tumor microenvironment impacts response to checkpoint inhibitor
         therapy.  In tonsil, PD-L1 is expressed by crypt-lining cells, and PD-1 is
@@ -135,12 +135,12 @@ Exhibit:
       Zoom: 4.044357591744471
     - Arrows: []
       Description: "Helper, cytotoxic, memory, regulatory and activated/exhausted\
-        \ T cells are simultaneously revealed. \n\nDisplayed markers: SYTOX blue (nucleus,\
+        \ T cells can be simultaneously revealed by deep multiplexing. CD4 helper and CD8 cytotoxic T cells are present in the interfollicular zone. \n\nDisplayed markers: SYTOX blue (nucleus,\
         \ gray); CD4 (helper T cells, green); CD8a (cytotoxic T cells, red); FoxP3\
         \ (T reg cells, magenta); CD45RO (memory T cells, blue); and LAG-3 (activated/exhausted\
         \ T cells, white).\n"
       Group: T Cell Subsets
-      Name: Investigate T-Cell Subsets
+      Name: Investigate T Cell Subsets
       Overlays:
       - height: 0.061173097249770936
         width: 0.08415182413547173
@@ -151,8 +151,8 @@ Exhibit:
       - 0.5524151120452422
       Zoom: 5.5909199348275544
     - Arrows: []
-      Description: 'Tonsil follicles are germinal centers rich in cell growth.  Both
-        Ki67 and PCNA are markers of cellular proliferation.
+      Description: 'Tonsil follicles contain germinal centers where expansion of B cells occurs in response to foreign antigens.  
+        Germinal centers are easily visualized by Ki67 and PCNA which are nuclear markers of cellular proliferation.
 
 
         Displayed markers: CD20 (B cells, blue); Ki67 (cell proliferation, green);
@@ -169,8 +169,9 @@ Exhibit:
       - 0.4404775339839361
       Zoom: 3.882583288074691
     - Arrows: []
-      Description: 'The follicular dendritic network is shown here in cyan.  Intrafollicular macrophages are co-stained with both yellow and red.  
-        Green fibroblastic reticular cells are noticeable in the T cell zone.
+      Description: 'The follicular dendritic network within the germinal center is shown here in cyan.  
+      Intrafollicular macrophages are co-stained with both yellow and red.  Macrophages associated with the reticular network are present in the 
+        T cell zone.
         
         
         Displayed markers: CD163 (green); CD11b (cyan); CD11c (yellow);
