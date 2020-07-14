@@ -10,3 +10,4 @@ plugins:
 exclude: []
 google_analytics: UA-41775478-2
 repository: labsyspharm/cycif.org
+markdown: CommonMarkGhPages
