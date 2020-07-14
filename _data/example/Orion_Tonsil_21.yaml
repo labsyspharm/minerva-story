@@ -92,7 +92,7 @@ Exhibit:
       Description: "Cancer tissue micro-environments contain numerous cell types,\
         \ including epithelial, immune, vascular endothelial and smooth muscle cells\
         \ in a spatial context for immune response. In tonsil, B cell follicles with\
-        \ germinal centers and interfollicular zones define the lymphoid compartments.\
+        \ germinal centers and T cell interfollicular zones define the lymphoid compartments.\
         \ Blood vessels are revealed by CD31 and smooth muscle actin (SMA). Note that\
         \ venules are SMA negative. Cytokeratin and E-cadherin co-stain mucosal and\
         \ crypt lining. \n\nDisplayed markers: CD20 (B cells, gray); CD31 (vascular\
@@ -192,7 +192,7 @@ Exhibit:
         T cell zone.
         
         
-        Displayed markers: CD163 (green); CD11b (cyan); CD11c (yellow);
+        Displayed markers: CD163 (macrophages, green); CD11b (dendritic cells/macrophages, cyan); CD11c (dendritic cells/macrophages, yellow);
         and CD68 (macrophages, red).'
       Group: Myeloid and Stromal Cells
       Name: Investigate Myeloid and Stromal Cells
