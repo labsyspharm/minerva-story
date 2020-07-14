@@ -70,9 +70,9 @@ Exhibit:
     - d0021b
     Name: Myeloid and Stromal Cells
     Path: Myeloid-and-Stromal-Cells_14__CD163--10__CD11b--13__CD11c--5__CD68
-  Header: This is a 21-marker whole-slide scan of a single tonsil section stained with TissuePlex
-    reagents and imaged using the Orion Instrument.  All markers were stained in a
-    single staining procedure and imaged in a single scan.  Use the arrow keys above to follow the waypoints for a tour of this tonsil.
+  Header: This is a 21-marker whole-slide scan of a single tonsil section stained with TissuePlex<sup>TM</sup>
+    reagents and imaged using the Orion<sup>TM</sup> Instrument.  All markers were stained in a
+    single staining procedure and imaged in a single scan.  Use the arrow keys above for a tour of this tonsil section.
   PixelsPerMicron: 3.0769  
   Images:
   - Description: Orion - Deep Multiplexing of a Single Tonsil Section
@@ -141,24 +141,15 @@ Exhibit:
         \ T cells, white).\n"
       Group: T Cell Subsets
       Name: Investigate T Cell Subsets
-      #images.rarecyte.com/Orion_Tonsil#d=0#g=2#m=-1#a=-100_-100#v=6.471_0.4573_0.3164#o=0.4212_0.2816_0.0902_0.0737#p=Q
       Overlays:
-      #- height: 0.061173097249770936
-       # width: 0.08415182413547173
-      #  x: 0.4470470868303069
-       # y: 0.5415804493701728
-      #Pan:
-      #- 0.46722298195532314
-      #- 0.5524151120452422
-      #Zoom: 5.5909199348275544
       - height: 0.051173097249770936
-        width: 0.07415182413547173
-        x: 0.4300
-        y: 0.3000
+        width: 0.05415182413547173
+        x: 0.4000
+        y: 0.344
       Pan:
-      - 0.4573
-      - 0.3164
-      Zoom: 6.471
+      - 0.4243
+      - 0.364
+      Zoom: 7.4896
     - Arrows: []
       Description: 'Tonsil follicles contain germinal centers where expansion of B cells occurs in response to foreign antigens.  
         Germinal centers are easily visualized by Ki67 and PCNA which are nuclear markers of cellular proliferation.
@@ -168,16 +159,7 @@ Exhibit:
         PCNA (cell proliferation, red); and CD45 (leukocytes, gray).'
       Group: Cellular Proliferation
       Name: Cellular Proliferation in Follicles
-      #images.rarecyte.com/Orion_Tonsil#d=0#g=3#m=-1#a=-100_-100#v=5.5909_0.518_0.5257#o=0.4761_0.4907_0.0881_0.0742#p=Q
       Overlays:
-      #- height: 0.0849851886856825
-       # width: 0.0810778236886398
-        #x: 1.1145386246295326
-        #y: 0.39668248464208056
-      #Pan:
-      #- 1.1093288046334755
-      #- 0.4404775339839361
-      #Zoom: 3.882583288074691
       - height: 0.0649851886856825
         width: 0.0810778236886398
         x: 0.478
@@ -195,7 +177,7 @@ Exhibit:
         Displayed markers: CD163 (macrophages, green); CD11b (dendritic cells/macrophages, cyan); CD11c (dendritic cells/macrophages, yellow);
         and CD68 (macrophages, red).'
       Group: Myeloid and Stromal Cells
-      Name: Investigate Myeloid and Stromal Cells
+      Name: Myeloid and Stromal Cells
       Overlays:
       - height: 0.07798449306598065
         width: 0.11217393679010579
