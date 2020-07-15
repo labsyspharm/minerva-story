@@ -71,11 +71,11 @@ Exhibit:
     Name: Myeloid and Stromal Cells
     Path: Myeloid-and-Stromal-Cells_14__CD163--10__CD11b--13__CD11c--5__CD68
   Header: This is a 21-marker whole-slide scan of a single tonsil section stained with TissuePlex<sup>TM</sup>
-    reagents and imaged using the Orion<sup>TM</sup> Instrument.  All markers were stained in a
+    Reagents and imaged using the Orion Instrument.  All markers were stained in a
     single staining procedure and imaged in a single scan.  Use the arrow keys above for a tour of this tonsil section.
   PixelsPerMicron: 3.0769  
   Images:
-  - Description: Orion - Deep Multiplexing of a Single Tonsil Section
+  - Description: Orion™ - Deep Multiplexing of a Single Tonsil Section
     Height: 27563
     MaxLevel: 6
     Name: i0
