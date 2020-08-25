@@ -20,3 +20,13 @@ bundle exec jekyll serve
 ```
 
 Open browser to localhost:4000
+
+## Rebuilding minerva-browser
+
+If you update the version of Minerva Browser in `package.json`, you will need to rebuild with webpack as shown below:
+```
+npm i
+npm run build
+```
+
+Then you can run the development server with `bundle exec jekyll serve` as normal.
