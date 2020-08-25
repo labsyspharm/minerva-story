@@ -3,9 +3,9 @@
 // @import "{{ site.theme }}";
 // @import "fonts";
 // @import "theme_customizations";
-@import "bootstrap/scss/functions";
+@import "scss/functions";
 @import "variables";
-@import "bootstrap/scss/bootstrap";
+@import "scss/bootstrap";
 @import "img_video";
 
 h1, h2, h3, h4, h5, h6,
