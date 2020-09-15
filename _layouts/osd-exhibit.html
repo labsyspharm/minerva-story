@@ -95,16 +95,10 @@
                         <div>
                             <p id="channel-label" class="mb-1 font-weight-bold pt-2">Select a marker group:</p>
                             <select id="group-picker" class="editControls selectpicker" multiple>
-                                {% for group in exhibit.Groups %}
-                                    <option>{{group.Name}}</option>
-                                {% endfor %}
                             </select>
                             <div id="channel-groups" class="nav flex nav-pills"></div>
                             <p id="mask-label" class="mb-1 font-weight-bold pt-2">Add data layer:</p>
                             <select id="mask-picker" class="editControls selectpicker" multiple>
-                                {% for mask in exhibit.Masks %}
-                                    <option>{{mask.Name}}</option>
-                                {% endfor %}
                             </select>
                             <div id="mask-layers" class="nav flex nav-pills">
                             </div>
