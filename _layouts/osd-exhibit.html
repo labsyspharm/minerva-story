@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
-  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}"> {% seo %}
-  <link rel="stylesheet" href="{{ '/assets/css/osd-exhibit.css' | relative_url }}">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/osd-exhibit.css">
 
 </head>
 
@@ -317,9 +317,7 @@
     <div id="all-overlays" class="d-none">
     </div>
 
-    <script>
-      {% include scripts.js %}
-    </script>
+    <script src="includes/scripts.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/2.3.1/openseadragon.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.6/showdown.min.js"></script>
@@ -329,15 +327,9 @@
     <script src="https://api.html5media.info/1.2.2/html5media.min.js"></script>
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.551.0.min.js"></script>
 
-    <script> 
-       {% include openseadragon-scalebar.js %}
-    </script>
-    <script> 
-       {% include openseadragon-svg-overlay.js %}
-    </script>
-    <script> 
-       {% include bundle.js %}
-    </script>
+    <script src="includes/openseadragon-scalebar.js"></script>
+    <script src="includes/openseadragon-svg-overlay.js"></script>
+    <script src="includes/bundle.js"></script>
     <script>
         const speech_bucket = "{{ speech_bucket }}";
         const exhibit = {{ exhibit | jsonify }};
