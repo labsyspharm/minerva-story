@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en-US" class="h-100">
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/osd-exhibit.css">
+
+</head>
+
+<body class="d-flex flex-column h-100">
+    <!-- style="position:relative" -->
+
+  
+  
+  
+  
+  
+  
+
+    <div id="content" class="position-fixed w-100" style="top: 0;left: 0;">
+        <div>
+            <div id="openseadragon1" class="openseadragon"></div>
+            <div id="legend" class="position-absolute"
+                 style="pointer-events: none; top: 1rem; right: 8px">
+                <div>
+                    <div class="btn-group-vertical bg-trans p-2"
+                         style="display:inline-block; vertical-align:top;">
+                        <a id="toggle-legend" class="p-1" href="javascript;;">
+                            <i class="open-legend fas fa-chevron-left" style="font-size: 25px;"></i>
+                            <i class="close-legend fas fa-chevron-right" style="font-size: 25px;"></i>
+                        </a>
+                        <ul id="channel-legend" class="list-unstyled m-0"></ul>
+                        <div class="p-1 only-3d">
+                          Depth:
+                        </div>
+                        <div style="text-align: right;">
+                          <span id="depth-legend"> </span>
+                        </div>
+                    </div> 
+                    <div id="channel-groups-legend" class="nav flex-column nav-pills p-2 bg-trans"
+                         style="display:inline-block; vertical-align:top;
+                         pointer-events: all; overflow-y: scroll; max-height: 80vh;">
+                    </div>
+                    <div id="z-slider-legend" class="bg-trans"
+                         style="pointer-events: all; display:inline-block; vertical-align:top;">
+                        <input id="z-slider" type="range"/>
+                    </div>
+                </div>
+            </div>
+            <div id="sidebar-menu" class="container position-absolute">
+                <div class="row">
+                    <div class="col-11 bg-trans waypoint-content p-3" style="max-height: 80vh; overflow-y: scroll">
+                        <div class="row">
+                            <div class="col-10">
+                                <h3 id="imageName" class="m-0"></h3>
+                            </div>
+                            <div class="col-2">
+                                <a class="btn text-light d-none" id="home-button"
+                                    href="/">
+                                    <i class="fas fa-home"></i>
+                                </a>
+                                <a class="btn text-light d-none" id="toc-button">
+                                    <i class="fas fa-list-ul"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <hr class="my-1">
+                        <div id="waypointControls" class="row align-items-center my-1">
+                            <div class="col-2 text-center" id="leftArrow">
+                                <i class="fas fa-arrow-left" style="font-size: 25px"></i>
+                            </div>
+                            <div class="col-8">
+                              <div class="audioControls">
+                                <audio style="height: 25px; width:100%" id="audioPlayback" controls>
+                                  <source id="audioSource" type="audio/mp3" src="">
+                                </audio> 
+                              </div>
+                            </div>
+                            <div class="col-2 text-center" id="rightArrow">
+                                <i class="fas fa-arrow-right" style="font-size: 25px;"></i>
+                            </div>
+                        </div>
+                        <!-- <hr> -->
+                        <div class="row">
+                            <div id="waypointName" class="col-10 h6 mt-0 mb-3">
+                            </div>
+                            <div id="waypointCount" class="col-2"></div>
+                        </div>
+                        <div id="viewer-waypoint">
+                        </div>
+                        <div>
+                            <p id="channel-label" class="mb-1 font-weight-bold pt-2">Select a marker group:</p>
+                            <select id="group-picker" class="editControls selectpicker" multiple>
+                            </select>
+                            <div id="channel-groups" class="nav flex nav-pills"></div>
+                            <p id="mask-label" class="mb-1 font-weight-bold pt-2">Add data layer:</p>
+                            <select id="mask-picker" class="editControls selectpicker" multiple>
+                            </select>
+                            <div id="mask-layers" class="nav flex nav-pills">
+                            </div>
+                        </div>
+                        <div>
+                            <div id="story-container"></div>
+                        </div>
+                    </div>
+                    <div class="col-1 p-0">
+                        <div class="btn-group-vertical bg-trans"> 
+                            <a id="toggle-sidebar" class="btn" href="javascript;;">
+                                <i class="close-sidebar fas fa-chevron-left" style="font-size: 25px;"></i>
+                                <i class="open-sidebar fas fa-chevron-right" style="font-size: 25px;"></i>
+                            </a>
+                        </div> 
+                        <div class="btn-group-vertical bg-trans">
+                            <a class="btn text-light" id="zoom-out" href="#zoom-out">
+                                <i class="fas fa-search-minus"></i>
+                            </a>
+                            <a class="btn text-light" id="zoom-in" href="#zoom-in">
+                                <i class="fas fa-search-plus"></i>
+                            </a>
+                            <span id="arrow-switch" class="nav-item arrow-switch">
+                            <a class="btn" href="javascript:;">
+                                <span class=""><i class="fas fa-location-arrow"></i></span>
+                            </a>
+                            </span>
+                            <span id="lasso-switch" class="nav-item lasso-switch">
+                            <a class="btn" href="javascript:;">
+                                <span class=""><i class="fas fa-bullseye"></i></span>
+                            </a>
+                            </span>
+                            <span id="draw-switch" class="nav-item draw-switch">
+                            <a class="btn" href="javascript:;">
+                                <span class=""><i class="fas fa-crosshairs"></i></span>
+                            </a>
+                            </span>
+                            <a class="btn" id='duplicate-view'>
+                                <span class=""><i class="fas fa-clone"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="viewer-tool" class="position-absolute bg-trans" style="right:1.5%; top: 40vh;">
+            </div>
+        </div>
+    </div>
+
+    <div class="d-none">
+        <input type="file" id="file-upload" class="d-none" />
+        <ul>
+            <li class="nav-item rounded-0" id="proto-story-index">
+                <a class="nav-link list-group-item-action font-weight-bold"></a>
+            </li>
+        </ul>
+
+        <div id="arrow-overlay" class="arrow-overlay">
+          <div id="arrowhead-image">
+            <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="48"
+   height="51.69223"
+   viewBox="0 0 12.711991 13.676902"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06"
+   sodipodi:docname="arrowhead.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8"
+     inkscape:cx="215.21359"
+     inkscape:cy="30.005484"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1440"
+     inkscape:window-height="855"
+     inkscape:window-x="366"
+     inkscape:window-y="127"
+     inkscape:window-maximized="0"
+     units="px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid93"
+       originx="-80.574495"
+       originy="-156.63291" />
+    <inkscape:grid
+       type="xygrid"
+       id="grid3784"
+       originx="-80.574495"
+       originy="-156.63291" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-80.487169,-126.68424)">
+    <path
+       style="fill:#000000;stroke:#ffffff;stroke-width:0.65998453;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 90.862994,132.64086 1.759972,-5.27987 -11.439757,6.15985 11.439757,6.15987 -1.759972,-5.27988 c -0.185517,-0.55655 -0.185517,-1.20342 0,-1.75997 z"
+       id="path91"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="scccss" />
+  </g>
+</svg>
+
+          </div>
+          <div id="arrow-image">
+            <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="122.79958"
+   height="51.401581"
+   viewBox="0 0 32.521399 13.600001"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06"
+   sodipodi:docname="arrow.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.959798"
+     inkscape:cx="154.51108"
+     inkscape:cy="29.572515"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1440"
+     inkscape:window-height="855"
+     inkscape:window-x="0"
+     inkscape:window-y="1"
+     inkscape:window-maximized="1"
+     units="px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid93"
+       originx="-80.574492"
+       originy="-156.63309" />
+    <inkscape:grid
+       type="xygrid"
+       id="grid3784"
+       originx="-80.574492"
+       originy="-156.63309" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-80.487168,-126.76104)">
+    <path
+       style="fill:#000000;stroke:#ffffff;stroke-width:0.6562736;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 90.804653,132.6843 1.750076,-5.25019 -11.375434,6.12522 11.375434,6.12523 -1.750076,-5.25019 h 21.875777 v -1.75007 z"
+       id="path91"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccc" />
+  </g>
+</svg>
+
+          </div>
+          <div id="arrow-text">
+            <div class="arrow-label p-3 bg-trans" style="max-width: 200px;">
+            </div>
+          </div>
+        </div>
+
+        <form class="form save_edits_form">
+            <div class="input-group">
+                <div style="width: 100%; margin-bottom: 5px">
+                    <input class="form-control edit_name editable bg-dark text-white rounded-0 border-0" type="text">
+                    </input>
+                    <br>
+                    <textarea class="form-control edit_text editable bg-dark text-white rounded-0 border-0" rows="9">
+                    </textarea>
+                    <br>
+                    <div class="row">
+                        <div id="edit_toggle_arrow" class="col-2 text-center">
+                            <i class="fas fa-location-arrow"></i>
+                        </div>
+                        <div class="col-10">
+                            <input class="form-control edit_arrow_text editable bg-dark text-white rounded-0 border-0" type="text">
+                            </input>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-default edit_copy_button px-1  " data-placement="bottom">
+                    <i class="fas fa-copy fa-lg"></i><br>
+                    <span class="mt-2 d-block" style="font-size: 0.7rem">
+                                    COPY
+                    </span>
+                </button>
+            </div>
+        </form>
+
+        <div id="readme">
+        </div>
+    </div>
+
+
+    <div id="password_modal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Minerva Password</h2>
+                </div>
+                <div class="modal-body">
+
+                    <form class="form">
+                        <div class="form-group">
+                            <input type=password class="form-control" name="p">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enter</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="edit_description_modal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content text-dark">
+                <div class="modal-header">
+                    <h2 class="modal-title m-0 h5">Region of Interest</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form class="form">
+                        <div class="form-group text-bold">
+                            <label> Enter a description for the selected region. </label>
+                            <textarea class="form-control" name="d" rows="4"></textarea>
+                        </div>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Make Shareable Link</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="welcome_modal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content text-dark">
+                <div class="modal-header">
+                    <h2 class="modal-title m-0 h5">Welcome</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    You're looking at an image layering
+                    <span class="channel_count"></span>
+                    CyCIF markers.
+                    Use the <i class="fas fa-arrow-left"></i>
+                    and <i class="fas fa-arrow-right"></i>
+                    arrows to move between highlighted image regions.
+                    Click <i class="fas fa-list-ul"></i>
+                    to return here to an overview of the full image.
+                    Use <i class="fas fa-search-minus"></i> to zoom out
+                    and <i class="fas fa-search-plus"></i> to zoom in.
+                    </br>
+                    </br>
+                    To share your own highlighted image regions,
+                    click <i class="fas fa-location-arrow"></i> to
+                    point an arrow at a small feature,
+                    click <i class="fas fa-bullseye"></i> to select
+                    a feature with a custom shape, and
+                    click <i class="fas fa-crosshairs"></i> to share a
+                    boundary around a rectangular region.
+                    Click <i class="fas fa-clone"></i> to open a
+                    new window with shared navigation.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="copy_link_modal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content text-dark">
+                <div class="modal-header">
+                    <h2 class="modal-title m-0 h5">Region of Interest</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="form">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="copy_link" name="copy_content" placeholder="Some path">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default modal_copy_button" type="submit" data-toggle="tooltip" data-placement="bottom">
+                                    Copy
+                                </button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="all-overlays" class="d-none">
+    </div>
+
+    <script src="includes/scripts.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/2.3.1/openseadragon.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.6/showdown.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+    <script src="https://api.html5media.info/1.2.2/html5media.min.js"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.551.0.min.js"></script>
+
+    <script src="includes/openseadragon-scalebar.js"></script>
+    <script src="includes/openseadragon-svg-overlay.js"></script>
+    <script src="includes/bundle.js"></script>
+    <script>
+        const speech_bucket = "";
+        const exhibit = {"Name":"LUNG_3","Header":"An interactive tour of a primary squamous cell carcinoma of the lung and adjacent non-neoplastic tissue surgically resected \nfrom a 44 year old female patient.\n","Footer":"Multiplexed images of immune markers were generated using tissue-based cyclic immunofluorescence (t-CyCIF) with a 40X/0.6NA objective.\n\nNote that the immunofluorescence signal for some markers (Keratin, IBA1, etc.) in this dataset are overexposed.\n","PixelsPerMicron":3.0769,"Images":[{"Name":"i0","Description":"Primary Lung Cancer [M-003]","Path":"https://s3.amazonaws.com/www.cycif.org/Nature-protocol-2019/LUNG_3","Width":14448,"Height":11101,"MaxLevel":4}],"Layout":{"Grid":[["i0"]]},"DefaultGroup":"Nuclei","Groups":[{"Path":"Structural-Components_0__DAPI--14__KERATIN--34__ASMA--22__CD45--33__IBA1","Name":"Structural Components","Colors":["0000FF","FFFFFF","FF0000","00FF00","00FFFF"],"Channels":["DNA","Keratin","α-SMA","CD45","IBA1"]},{"Path":"PDL1-Expression_0__DAPI--14__KERATIN--19__PDL1--33__IBA1","Name":"PD-L1 Expression","Colors":["0000FF","FFFFFF","FF0000","00FFFF"],"Channels":["DNA","Keratin","PD-L1","IBA1"]},{"Path":"B-Cells-and-T-Cells_0__DAPI--18__CD3D--35__CD20","Name":"Lymphocytes","Colors":["0000FF","FF0000","FFFFFF"],"Channels":["DNA","CD3d","CD20"]},{"Path":"Regulatory-T-Cells-2_0__DAPI--18__CD3D--21__CD4--30__FOXP3","Name":"Regulatory T-Cells","Colors":["0000FF","FF0000","00FF00","FFFFFF"],"Channels":["DNA","CD3d","CD4","FOXP3"]},{"Path":"Cytotoxic-T-Cells_0__DAPI--18__CD3D--23__CD8A","Name":"Cytotoxic T-Cells","Colors":["0000FF","FF0000","00FF00"],"Channels":["DNA","CD3d","CD8"]},{"Path":"Inhibitory-T-Cells_0__DAPI--18__CD3D--15__PD1--30__FOXP3","Name":"Inhibitory T-Cells","Colors":["0000FF","FF0000","00FF00","FFFFFF"],"Channels":["DNA","CD3d","PD1","FOXP3"]},{"Path":"Rare-Immune-Population-1_0__DAPI--21__CD4--23__CD8A--30__FOXP3","Name":"CD8+/FOXP3+ T Cells","Colors":["0000FF","00FF00","FF0000","FFFFFF"],"Channels":["DNA","CD4","CD8A","FOXP3"]},{"Path":"Rare-Immune-Population-2_0__DAPI--21__CD4--23__CD8A--15__PD1--10__LAG3","Name":"PD1+/LAG3+ T Cells","Colors":["0000FF","00FF00","FF0000","00FFFF","FFFFFF"],"Channels":["DNA","CD4","CD8A","PD1","LAG3"]},{"Path":"Macrophages_0__DAPI--33__IBA1--25__CD163","Name":"Macrophages","Colors":["00FF00","FF0000","0000FF"],"Channels":["IBA1","CD163","DNA"]},{"Path":"Macrophages-(cont.)_0__DAPI--26__CD68--29__CD11B--27__CD14","Name":"Macrophages (cont.)","Colors":["0000FF","00FF00","FFFFFF","FF0000"],"Channels":["DNA","CD68","CD11B","CD14"]},{"Path":"Nuclei_0__DAPI","Name":"Nuclei","Colors":["FFFFFF"],"Channels":["Hoechst"]},{"Path":"KERATIN_14__KERATIN","Name":"KERATIN","Colors":["FFFFFF"],"Channels":["KERATIN"]},{"Path":"ASMA_34__ASMA","Name":"ASMA","Colors":["FF0000"],"Channels":["ASMA"]},{"Path":"CD45_22__CD45","Name":"CD45","Colors":["00FF00"],"Channels":["CD45"]},{"Path":"IBA1_33__IBA1","Name":"IBA1","Colors":["00FFFF"],"Channels":["IBA1"]},{"Path":"PDL1_19__PDL1","Name":"PDL1","Colors":["FF0000"],"Channels":["PDL1"]},{"Path":"CD3D_18__CD3D","Name":"CD3d","Colors":["FF0000"],"Channels":["CD3d"]},{"Path":"CD20_35__CD20","Name":"CD20","Colors":["FFFFFF"],"Channels":["CD20"]},{"Path":"CD4_21__CD4","Name":"CD4","Colors":["00FF00"],"Channels":["CD4"]},{"Path":"FOXP3_30__FOXP3","Name":"FOXP3","Colors":["FF0000"],"Channels":["FOXP3"]},{"Path":"CD8A_23__CD8A","Name":"CD8A","Colors":["00FF00"],"Channels":["CD8A"]},{"Path":"PD1_15__PD1","Name":"PD1","Colors":["00FF00"],"Channels":["PD1"]},{"Path":"CD163_25__CD163","Name":"CD163","Colors":["FF0000"],"Channels":["CD163"]},{"Path":"CD68_26__CD68","Name":"CD68","Colors":["00FF00"],"Channels":["CD68"]},{"Path":"CD11B_29__CD11B","Name":"CD11B","Colors":["FFFFFF"],"Channels":["CD11B"]},{"Path":null,"Name":"CD14_27__CD14","Colors":"CD14 - FF0000","Channels":["CD14"]},{"Path":"LAG3_10__LAG3","Name":"LAG3","Colors":["FFFFFF"],"Channels":["LAG3"]}],"Masks":[{"Name":"Cluster 1 - Tumor Cells","Path":"datalayer/clustering/all_cell_types/cluster_1","Colors":["F44336"],"Channels":["Tumor"]},{"Name":"Cluster 2 - Other Cells","Path":"datalayer/clustering/all_cell_types/cluster_2","Colors":["673AB7"],"Channels":["Other"]},{"Name":"Cluster 3 - Immune Cells","Path":"datalayer/clustering/all_cell_types/cluster_3","Colors":["4CAF50"],"Channels":["Immune"]},{"Name":"Cluster 4 - Stromal Cells","Path":"datalayer/clustering/all_cell_types/cluster_4","Colors":["03A9F4"],"Channels":["Stromal"]},{"Name":"All Clusters","Path":"datalayer/clustering/merged_s40/level_0/cluster_id_all","Colors":["F44336"],"Channels":["Segmentation"]}],"Stories":[{"Name":"","Waypoints":[{"Name":"Tissue Regions","Group":"Structural Components","Audio":"/assets/audio/speech_20190918201043160.mp3","Description":"In this tissue specimen of a human lung cancer, the tumor region can be seen on the right-hand side and an \nadjacent non-tumor, stromal region can be seen on the left-hand side.\n","Zoom":0.5,"Pan":[0.5,0.5],"Overlay":{"x":0.8681,"y":0.5487,"width":0,"height":0},"Arrows":[{"Point":[0.9381917980144533,0.5809178743961351],"Text":"TUMOR REGION","HideArrow":true},{"Point":[0.3480346062266265,0.2077906326563334],"Text":"STROMAL REGION","HideArrow":true}],"Polygon":"Q"},{"Name":"Epithelial Tumor Cells","Group":"Structural Components","Audio":"/assets/audio/speech_20190918201043160.mp3","Description":"The epithelial tumor cells of the lung are noted by their larger morphology \nand cytoplasmic expression of `Keratin`. \n","Zoom":2.7125,"Pan":[1.0514,0.7176],"Overlay":{"x":0.861,"y":0.5836,"width":0.3958,"height":0.2318}},{"Name":"Adjacent Non-Tumor Region","Group":"Structural Components","Audio":"/assets/audio/speech_20190918201156545.mp3","Description":"In the adjacent non-tumor region, most of the cells are fibroblasts \nor perivascular smooth muscle cells \nexpressing `a-SMA` and immune cells expressing `CD45` or `IBA1`.\n","Zoom":1.5838,"Pan":[0.3157,0.232],"Overlay":{"x":0.0003,"y":0.0254,"width":0.6366,"height":0.4418}},{"Name":"Tumor-Stromal Interface","Group":"Structural Components","Audio":"/assets/audio/speech_20190918201043160.mp3","DefineGroup":true,"Description":"In the tumor-stromal interface where clusters of tumor cells (`Keratin`)\ncan be seen associated with stromal areas containing fibroblasts (`α-SMA`) \nand immune cells (`CD45` and `IBA1`). \nThe tumor-stromal interface undergoes changes that can provide clues\nto tumor metastasis and progression.\n","Zoom":0.7453,"Pan":[0.6209,0.6632],"Overlay":{"x":0.301,"y":0.5642,"width":0.5934,"height":0.4357}},{"Name":"PD-L1 Expression","Group":"PD-L1 Expression","Audio":"/assets/audio/speech_20190918201256228.mp3","Description":"Programmed Death Ligand 1 (`PD-L1`), also known as cluster of differentiation 274 (CD274), \nis a target of immunotherapeutics. It is expressed in tumor cells (`Keratin`) \nas well as in some macrophages (`IBA1`). `PD-L1` inactivates T cells \nand prevents immune surveillance of the tumors by binding to the PD-1 receptor on T cells. \nThus, one approach to immunotherapy is to block the interaction of `PD-L1` with `PD-1`.\n","Zoom":1.2442,"Pan":[0.8507,0.4331],"Overlay":{"x":0.7248,"y":0.3313,"width":0.3749,"height":0.2424}},{"Name":"PD-L1 Expressing Tumor Cells","Group":"PD-L1 Expression","Audio":"/assets/audio/speech_20190918201431372.mp3","Description":"Here, tumor cells (`Keratin`) can be seen expressing `PD-L1` on the cell membrane.\n","Zoom":4.4581,"Pan":[0.6317,0.4939],"Overlay":{"x":0.593,"y":0.4632,"width":0.0967,"height":0.0672}},{"Name":"PD-L1 Expressing Macrophages","Group":"PD-L1 Expression","Arrows":[{"Point":[1.007917516813384,0.3362427017301348],"Text":"Macrophage"}],"Audio":"/assets/audio/speech_20190918201550587.mp3","Description":"Macrophages (`IBA1`) expressing `PD-L1` are also observed in this lung cancer specimen.\n","Zoom":11.8066,"Pan":[1.0044,0.3374],"Overlay":{"x":0.9982,"y":0.3291,"width":0.0125,"height":0.0119}},{"Name":"Immune Populations","Group":"Lymphocytes","Audio":"/assets/audio/speech_20190918201656247.mp3","Description":"Many immune populations are present in this lung cancer and are often \nenriched in the tumor region.\n\nWhen the subset of CD45 positive cells was clustered based on expression \nof CD45, CD3d, CD8A, CD4, CD20, PD1, and FOXP3 using k-means, \nseven distinct immune cell populations emerged.\n\nThe populations are shown in the heat map below, where each row represents \na cluster and each column represents an immune marker. \nThe color represents the expression level of each marker.\n","VisMatrix":"/assets/visdata/clust7hpdat_LUNG-3-PR.csv","Zoom":5.5411,"Pan":[1.05,0.3216],"Overlay":{"x":1.0132,"y":0.2906,"width":0.0947,"height":0.0671}},{"Name":"B Cells and T Cells","Group":"Lymphocytes","Audio":"/assets/audio/speech_20190918201656247.mp3","Description":"T cells (`CD3d`) are often found infiltrating the tumor region. B cells (`CD20`) \nare also present but can be somewhat less common as shown in this sample.\n","Zoom":1.728,"Pan":[0.8249,0.7192],"Overlay":{"x":0.7002,"y":0.6182,"width":0.2913,"height":0.2257}},{"Name":"Regulatory T-Cells","Group":"Regulatory T-Cells","Audio":"/assets/audio/speech_20190918201756267.mp3","Description":"A subpopulation of T cells (`CD3d`) is regulatory T cells, also known as Tregs. \nTregs are marked by membraneous expression of `CD4` and nuclear expression of `FOXP3`. \nThese cells act to supress immune response as a homeostatis mechanism. \n","Zoom":13.3116,"Pan":[1.0927,0.4591],"Overlay":{"x":1.0793,"y":0.4475,"width":0.0302,"height":0.0228}},{"Name":"Cytotoxic T-Cells","Group":"Cytotoxic T-Cells","Audio":"/assets/audio/speech_20190918201756267.mp3","Description":"Another subpopulation of T cells (`CD3d`) is cytotoxic T cells, \nalso known as T-killer cells or cytotoxic T lymphocytes (CTLs). \nCTLs are marked by the expression of `CD8` on the cell membrane \nand are key players in tumor surveillance by the immune system.\n","Zoom":4.4581,"Pan":[1.0074,0.3353],"Overlay":{"x":0.9645,"y":0.3018,"width":0.1025,"height":0.0716}},{"Name":"Inhibitory T-Cells","Group":"Inhibitory T-Cells","Audio":"/assets/audio/speech_20190918201756267.mp3","Description":"Some subpopulations of T cells (`CD3d`) express inhibitory molecules such as `PD1` or `FOXP3`. \nIn this sample, these inhibitory T cells are enriched in the tumor region.\n","Zoom":6.8898,"Pan":[1.0383,0.2087],"Overlay":{"x":1.0109,"y":0.1867,"width":0.0672,"height":0.0488}},{"Name":"CD8+/FOXP3+ T Cells","Group":"CD8+/FOXP3+ T Cells","Audio":"/assets/audio/speech_20190918201847222.mp3","Description":"In this lung cancer, we found a rare, or low frequency, immune population`:` CD8A+/FOXP3+ T cells. \n\nTraditionally, expression of `FOXP3` has been observed in `CD4` expressing cells,\nindicating a regulatory T-cell phenotype. However, single-cell analysis of multiple markers \nrevealed a population of `CD8A` expressing T cells that also expresses `FOXP3`. \n\nThe frequency of this population is very low (0.66% of immune cells) in this tumor. \n\nThis rare population of `CD8A` and `FOXP3` expressing cells in addition to the more characterized \npopulation of `CD4` and `FOXP3` expressing cells are both enriched in the tumor region.\n","Zoom":4.5206,"Pan":[0.7928,0.6827],"Arrows":[{"Point":[0.7982181611329084,0.6783015759728294],"Text":"CD8+/FOXP3+ T cell"}],"Polygon":"Q","Overlay":{"x":-100,"y":-100,"width":1,"height":1}},{"Name":"PD1+/LAG3+ T Cells","Group":"PD1+/LAG3+ T Cells","Audio":"/assets/audio/speech_20190918202005841.mp3","Description":"Another rare, or low frequency, population present in the tumor \nis `PD-1`+/`LAG3`+ double positive T cells. Both of these markers are\nimmune checkpoint receptors expressed on T cells and are therefore \ntargets of immunotherapies.\n\nSome of these `PD-1`+/`LAG3`+ double positive cells express `CD4` \nwhereas others express `CD8`.\n\nThe frequency of these populations is very low. `CD8`+/`PD-1`+/`LAG3`+ \ncells are only 1% of immune cells whereas `CD4`+/`PD-1`+/`LAG3`+ \ncells are an even smaller proportion, ~0.1% of immune cells.\n\nBoth populations are enriched in the tumor region, with `CD8`+/`PD-1`+/`LAG3`+ cells\nhaving a 14-fold greater abundance in the tumor region versus the stromal region\nand `CD4`+/`PD-1`+/`LAG3`+ cells being present exclusively in the tumor region.\n","Zoom":11.3066,"Pan":[0.9134,0.5064],"Arrows":[{"Point":[0.9152321873927005,0.5063301355948591],"Text":"PD-1+/LAG3+ T cell","HideArrow":false}]},{"Name":"Macrophages","Group":"Macrophages","Audio":"/assets/audio/speech_20190916132915227.mp3","Description":"Many macrophages are present in both the tumor and stromal regions of this lung tissue. \n\nA subtype of macrophages or dendritic cells are detected using `IBA1`. \nDendritic cells typically process antigens and present them on their cell surface to T cells, \nacting as an intermediary between the innate and adaptive immune systems.\n\nAnother macrophage marker, `CD163`, can be seen expressed on the surface of\nmacrophages or monocytes.\n\nMultiplexed imaging reveals the diversity and dynamic states of macrophages, \nwith some cells showing co-expression of `IBA1` and `CD163`.\n","Zoom":3.2046,"Pan":[0.7663,0.3917],"Overlay":{"x":0.6969,"y":0.3375,"width":0.1601,"height":0.1166}},{"Name":"Macrophages (cont.)","Group":"Macrophages (cont.)","Audio":"/assets/audio/speech_20190916132915227.mp3","Description":"Other subtypes of macrophages include CD68 expressing macrophages which are involved in macrophage homing, \nCD11B expressing macrophages which are involved in adhesive interactions, \nand CD14 expressing macrophages which mediate innate immune responses. \n\nInterestingly, CD68 and CD11B expressing macrophages are concentrated in the tumor region, \nwhereas CD14 expressing macropages are spread throughout the tissue.\n","Zoom":3.2046,"Pan":[0.7663,0.3917],"Overlay":{"x":0.6969,"y":0.3375,"width":0.1601,"height":0.1166}}]}]};
+        const marker_data = [{"﻿String":"ARL13B","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=ARL13B&keywords=ARL13B"},{"﻿String":"ASMA","Alias":"A-SMA, a-SMA, alpha-SMA, α-SMA","Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=ACTA2&keywords=alpha,smooth,muscle,actin"},{"﻿String":"BANF1","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=BANF1&keywords=BANF1"},{"﻿String":"CD11B","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=ITGAM&keywords=CD11B"},{"﻿String":"CD14","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=CD14&keywords=CD14"},{"﻿String":"CD163","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=CD163&keywords=CD163"},{"﻿String":"CD19","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=CD19&keywords=CD19"},{"﻿String":"CD20","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=MS4A1&keywords=CD20"},{"﻿String":"CD21","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=CR2&keywords=CD21"},{"﻿String":"CD3D","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=CD3D&keywords=CD3D"},{"﻿String":"CD4","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=CD4&keywords=CD4"},{"﻿String":"CD45","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=PTPRC&keywords=CD45"},{"﻿String":"CD45RB","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=PTPRC&keywords=CD45RB"},{"﻿String":"CD68","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=CD68&keywords=CD68"},{"﻿String":"CD8A","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=CD8A&keywords=CD8A"},{"﻿String":"FOXP3","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=FOXP3&keywords=FOXP3"},{"﻿String":"GFAP","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=GFAP&keywords=GFAP"},{"﻿String":"GTUBULIN","Alias":"gamma-tubulin","Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=TUBG1&keywords=gamma,tubulin"},{"﻿String":"IBA1","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=AIF1&keywords=IBA1"},{"﻿String":"KERATIN","Alias":"pan-cytokeratin, pan-keratin","Link":"https://www.genecards.org/Search/Keyword?queryString=KERATIN"},{"﻿String":"KI67","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=MKI67&keywords=KI67"},{"﻿String":"LAG3","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=LAG3&keywords=LAG3"},{"﻿String":"LAMINAC","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=LMNA&keywords=LAMIN,AC"},{"﻿String":"LAMINB","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=LMNB1&keywords=LAMINB"},{"﻿String":"PD-1","Alias":"PD1","Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=PDCD1&keywords=PD-1"},{"﻿String":"PD-L1","Alias":"PDL1","Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=CD274&keywords=PD-L1"},{"﻿String":"CD19","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=CD19&keywords=CD19"},{"﻿String":"CD14","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=CD14&keywords=CD11c"},{"﻿String":"CD56","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=NCAM1&keywords=CD56"},{"﻿String":"CD34","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=CD34&keywords=CD34"},{"﻿String":"CD44","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=CD44&keywords=CD34"},{"﻿String":"CD14","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=CD14&keywords=CD14"},{"﻿String":"CD33","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=CD33&keywords=CD33"},{"﻿String":"CD41","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=ITGA2B&keywords=CD41"},{"﻿String":"CD61","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=ITGB3&keywords=CD61"},{"﻿String":"CD62","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=SELP&keywords=CD62"},{"﻿String":"CD146","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=MCAM&keywords=CD146"},{"﻿String":"CD1d","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=CD1D&keywords=CD1d"},{"﻿String":"CD2","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=CD2&keywords=CD2"},{"﻿String":"CD5","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=CD5&keywords=cd5"},{"﻿String":"CD7","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=CD7&keywords=CD7"},{"﻿String":"CD9","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=CD9&keywords=CD9"},{"﻿String":"CD10","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=MME&keywords=CD10"},{"﻿String":"CD11A","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=ITGAL&keywords=CD11A"},{"﻿String":"CD70","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=CD70&keywords=CD70"},{"﻿String":"CD74","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=CD74&keywords=CD74"},{"﻿String":"CD103","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=ITGAE&keywords=CD103"},{"﻿String":"CD133","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=PROM1&keywords=CD133"},{"﻿String":"CD168","Alias":null,"Link":"https://www.genecards.org/cgi-bin/carddisp.pl?gene=HMMR&keywords=CD168"}];
+        const cell_type_data = [{"﻿String":"Natural Killer Cells","Alias":null,"Link":"https://www.immunology.org/public-information/bitesized-immunology/c%C3%A9lulas/natural-killer-cells"},{"﻿String":"B Cells","Alias":null,"Link":"https://www.immunology.org/public-information/bitesized-immunology/cells/b-cells"},{"﻿String":"Basophil","Alias":null,"Link":"https://www.immunology.org/public-information/bitesized-immunology/c%C3%A9lulas/basophils"},{"﻿String":"Helper T cell","Alias":"CD4+ T Cell","Link":"https://www.immunology.org/public-information/bitesized-immunology/células/cd4-t-cells"},{"﻿String":"Cytotoxic T Cell","Alias":"CD8+ T Cell","Link":"https://www.immunology.org/public-information/bitesized-immunology/c%C3%A9lulas/cd8-t-cells"},{"﻿String":"Dendritic Cell","Alias":null,"Link":"https://www.immunology.org/public-information/bitesized-immunology/cells/dendritic-cells"},{"﻿String":"Eosinophils","Alias":null,"Link":"https://www.immunology.org/public-information/bitesized-immunology/c%C3%A9lulas/eosinophils"},{"﻿String":"Macrophage","Alias":null,"Link":"https://www.immunology.org/public-information/bitesized-immunology/c%C3%A9lulas/macrophages"},{"﻿String":"Mast Cell","Alias":null,"Link":"https://www.immunology.org/public-information/bitesized-immunology/c%C3%A9lulas/mast-cells"},{"﻿String":"Neutrophil","Alias":null,"Link":"https://www.immunology.org/public-information/bitesized-immunology/cells/neutrophils"},{"﻿String":"Regulatory T Cell","Alias":"Treg","Link":"https://www.immunology.org/public-information/bitesized-immunology/células/regulatory-t-cells-tregs"},{"﻿String":"T follicular helper cell","Alias":null,"Link":"https://www.immunology.org/public-information/bitesized-immunology/cells/t-follicular-helper-cells"},{"﻿String":"bone marrow","Alias":null,"Link":"https://www.immunology.org/public-information/bitesized-immunology/%C3%B3rganos-y-tejidos/bone-marrow"},{"﻿String":"lymph node","Alias":null,"Link":"https://www.immunology.org/public-information/bitesized-immunology/organs-and-tissues/lymph-node"},{"﻿String":"complement system","Alias":null,"Link":"https://www.immunology.org/public-information/bitesized-immunology/sistemas-y-procesos/complement-system"},{"﻿String":"phagocytosis","Alias":null,"Link":"https://www.immunology.org/public-information/bitesized-immunology/systems-and-processes/phagocytosis"}];
+        const get_links_alias = MinervaStory.default.get_links_alias;
+
+        [marker_links_map, marker_alias_map] = get_links_alias(marker_data);
+        [cell_type_links_map, cell_type_alias_map] = get_links_alias(cell_type_data);
+
+        window.viewer = MinervaStory.default.build_page(exhibit, {
+          embedded: true
+        });
+    </script>
+    <script>
+        const makeTwinViewer = function(e) {
+            var youngerWindow = window.open(window.location.href);
+            var viewer1 = window.viewer;
+            var viewer2;
+            youngerWindow.addEventListener('DOMContentLoaded', (e) => {
+                viewer2 = youngerWindow.viewer;
+                console.log(youngerWindow.viewer);
+                var viewer1Leading = false;
+                var viewer2Leading = false;
+
+                var viewer1Handler = function() {
+                if (viewer2Leading) {
+                    return;
+                }
+
+                viewer1Leading = true;
+                viewer2.viewport.zoomTo(viewer1.viewport.getZoom());
+                viewer2.viewport.panTo(viewer1.viewport.getCenter());
+                viewer1Leading = false;
+                };
+
+                var viewer2Handler = function() {
+                if (viewer1Leading) {
+                    return;
+                }
+
+                viewer2Leading = true;
+                viewer1.viewport.zoomTo(viewer2.viewport.getZoom());
+                viewer1.viewport.panTo(viewer2.viewport.getCenter());
+                viewer2Leading = false;
+                };
+
+                viewer1.addHandler('zoom', viewer1Handler);
+                viewer2.addHandler('zoom', viewer2Handler);
+                viewer1.addHandler('pan', viewer1Handler);
+                viewer2.addHandler('pan', viewer2Handler);
+            });
+        };
+        const duplicateViewButton = document.querySelector('#duplicate-view');
+        duplicateViewButton.onclick = makeTwinViewer;
+    </script>
+
+<script>
+        $('#story-board').on('hidden.bs.collapse', function() { 
+            $('#js-story-collapse-indicator')[0].innerHTML = '<span class="px-2">SHOW MORE</span> <i class="fas fa-chevron-down"></i>'
+        });
+        $('#story-board').on('shown.bs.collapse', function() { 
+            $('#js-story-collapse-indicator')[0].innerHTML = '<span class="px-2">SHOW LESS</span> <i class="fas fa-chevron-up"></i>'
+        });
+        
+        
+            // $('#scroll-bottom')
+            //     .click(function(event) {
+            //         event.preventDefault();
+            //         $('aside').animate({
+            //             scrollTop: $(window).height() * 0.65
+            //         }, 500, "swing", function() {
+            //             $('#scroll-bottom').addClass('d-none')
+            //             Callback after animation
+            //             Must change focus!
+            //             var $target = $(target);
+            //             $target.focus();
+            //             if ($target.is(":focus")) { // Checking if the target was focused
+            //                 return false;
+            //             } else {
+            //                 $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            //                 $target.focus(); // Set focus again
+            //             };
+            //         });
+            //     });
+
+        // $(document).ready(function() {
+        //     $('#osd-side-nav').scrollTop(0);
+        //     topAnchor = $('#story-title').position().top;
+
+        //     var storyTitleAdded = false;
+        //     $('#osd-side-nav').scroll(function() {
+        //         if ($('#story-title').position().top == topAnchor && $('#story-title-sticky')[0]) {
+        //             $('#story-title-sticky')[0].parentNode.removeChild($('#story-title-sticky')[0]);
+        //             storyTitleAdded = false;
+        //         }
+        //         if ($('#story-title').position().top < topAnchor && !storyTitleAdded) {
+        //             var clNode = $('#story-title')[0].cloneNode(true);
+        //             clNode.setAttribute('id', 'story-title-sticky');
+        //             $('#story-title')[0].parentNode.insertBefore(clNode, $('#story-title')[0].nextSibling);
+        //             $('#story-title-sticky')
+        //                 .css('top', topAnchor)
+        //                 .css('width', $('#story-title').width())
+        //                 .addClass('border-bottom border-secondary')
+        //             storyTitleAdded = true;
+        //         }
+        //     });
+        // })
+
+        $('.js-toggle-osd-side-nav').click(function() {
+            $('#osd-side-nav').position().top == 0 
+                ? $('#osd-side-nav').css('top', '75vh')
+                : $('#osd-side-nav').css('top', 0);
+            $('#osd-side-nav').scrollTop(0);
+        })
+    </script>
+</body>
+
+</html>
