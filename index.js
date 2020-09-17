@@ -1,4 +1,5 @@
 import mb from 'minerva-browser'
+import './assets/css/style.scss'
 
 export default {
   build_page: mb.build_page,
