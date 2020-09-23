@@ -7,7 +7,8 @@ window.CognitoUser = AmazonCognitoIdentity.CognitoUser;
 window.CognitoUserPool = AmazonCognitoIdentity.CognitoUserPool;
 window.AuthenticationDetails = AmazonCognitoIdentity.AuthenticationDetails;
 
-import mb from 'minerva-browser'
+import mb from 'minerva-browser';
+window.OpenSeadragon = mb.OpenSeadragon;
 
 export default {
   build_page: mb.build_page
