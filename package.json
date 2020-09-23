@@ -1,12 +1,9 @@
 {
   "dependencies": {
-    "bootstrap": "4.4.1",
-    "jquery": "3.5.1",
-    "popper.js": "1.16.0",
+    "amazon-cognito-identity-js": "^3.2.5",
+    "minerva-browser": "2.6.0",
     "webpack": "^4.42.0",
-    "webpack-cli": "^3.3.11",
-    "minerva-browser": "2.5.0",
-    "amazon-cognito-identity-js": "^3.2.5"
+    "webpack-cli": "^3.3.11"
   },
   "scripts": {
     "develop": "webpack --mode development",
