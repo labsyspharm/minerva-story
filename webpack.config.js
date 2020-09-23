@@ -10,12 +10,4 @@ IndexLoader = {
   }
 }
 
-ScriptsLoader = {
-  entry: './scripts.js',
-  output: {
-    filename: 'scripts.js',
-    path: path.resolve(__dirname, 'includes')
-  }
-}
-
-module.exports = [IndexLoader, ScriptsLoader]
+module.exports = [IndexLoader]

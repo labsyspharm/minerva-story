@@ -5,7 +5,8 @@
     "popper.js": "1.16.0",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11",
-    "minerva-browser": "2.1.0"
+    "minerva-browser": "2.2.0",
+    "amazon-cognito-identity-js": "^3.2.5"
   },
   "scripts": {
     "develop": "webpack --mode development",
