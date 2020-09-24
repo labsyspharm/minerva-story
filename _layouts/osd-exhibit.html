@@ -11,7 +11,7 @@
 
 </head>
 
-<body class="d-flex flex-column h-100">
+<body class="minerva-root d-flex flex-column h-100">
     <!-- style="position:relative" -->
 
   {% assign cell_type_data = site.data.cell_type_links_database %}
@@ -21,7 +21,7 @@
   {% assign exhibit = config_figure.Exhibit %}
   {% assign speech_bucket = site.speech_bucket %}
 
-    <div id="content" class="minerva-root position-fixed w-100" style="top: 0;left: 0;">
+    <div id="content" class="position-fixed w-100" style="top: 0;left: 0;">
         <div>
             <div id="openseadragon1" class="openseadragon"></div>
             <div id="legend" class="position-absolute"
