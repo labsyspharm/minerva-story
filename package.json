@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "amazon-cognito-identity-js": "^3.2.5",
-    "minerva-browser": "2.9.0",
+    "minerva-browser": "2.10.0",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11"
   },
