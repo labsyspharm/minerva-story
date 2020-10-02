@@ -2,8 +2,7 @@ _site/
 Gemfile.lock
 package-lock.json
 
-node_modules/*
-!node_modules/bootstrap
+node_modules
 
 yarn.lock
 *.log
