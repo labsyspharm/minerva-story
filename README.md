@@ -1,25 +1,13 @@
 # Minerva Story 
 
-## Local build instructions
-
-### Install dependencies
-
-Install Ruby 2.6.6 from https://www.ruby-lang.org
-(On Windows, install Ruby+devkit)
-
-```bash
-gem install jekyll bundler
-bundle install
-```
-
-### Run development server
+### Run local server
 
 In the project folder, run command:
 ```bash
-bundle exec jekyll serve
+npx http-server -p 8000
 ```
 
-Open browser to localhost:4000
+Open browser to localhost:8000
 
 ## Rebuilding minerva-browser
 
@@ -29,4 +17,4 @@ npm i
 npm run build
 ```
 
-Then you can run the development server with `bundle exec jekyll serve` as normal.
+Then you can run the local server with `npx http-server -p 8000` as normal.

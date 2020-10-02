@@ -1,6 +1,10 @@
-import mb from 'minerva-browser'
+const AmazonCognitoIdentity = require('amazon-cognito-identity-js');
+window.CognitoUser = AmazonCognitoIdentity.CognitoUser;
+window.CognitoUserPool = AmazonCognitoIdentity.CognitoUserPool;
+window.AuthenticationDetails = AmazonCognitoIdentity.AuthenticationDetails;
+
+import mb from 'minerva-browser';
 
 export default {
-  build_page: mb.build_page,
-  get_links_alias: mb.get_links_alias
+  build_page: mb.build_page
 }
