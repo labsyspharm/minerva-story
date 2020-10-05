@@ -1,5 +1,22 @@
 # Minerva Story 
 
+### Clone repository
+
+```bash
+git clone git@github.com:labsyspharm/minerva-story.git
+cd minerva-story
+```
+
+### Install npm
+
+Download and install [Node.js for your platform](https://nodejs.org/en/).
+
+Install `npx` to run the `http-server`:
+
+```bash
+npm install -g npx
+```
+
 ### Run local server
 
 In the project folder, run command:
