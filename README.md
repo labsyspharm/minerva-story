@@ -1,5 +1,8 @@
 # Minerva Story 
 
+Check out the [Minerva Story Wiki](https://github.com/labsyspharm/minerva-story/wiki), and the official CYCIF.org page on [Minerva Software](https://www.cycif.org/software/minerva).
+
+
 ## Minerva Repository Structure
 
 ### Minerva Story
