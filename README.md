@@ -2,6 +2,8 @@
 
 Check out the [Minerva Story Wiki](https://github.com/labsyspharm/minerva-story/wiki), and the official CYCIF.org page on [Minerva Software](https://www.cycif.org/software/minerva).
 
+We also published a paper describing Minerva Story and Author: 
+Hoffer et al., (2020). Minerva: a light-weight, narrative image browser for multiplexed tissue images. _Journal of Open Source Software_, 5(54), 2579, https://doi.org/10.21105/joss.02579 .
 
 ## Minerva Repository Structure
 
