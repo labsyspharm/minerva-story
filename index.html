@@ -11,8 +11,8 @@
     <div id="minerva-browser"> </div>
     <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
     <script src="https://api.html5media.info/1.2.2/html5media.min.js"></script>
-
-    <script src="bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@4.5.0/dist/amazon-cognito-identity.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/minerva-browser@2.11.1/build/bundle.js"></script>
   <script>
         const speech_bucket = "";
         const authenticate = function(username, pass) {
@@ -32,17 +32,17 @@
 
             const minervaPoolId = 'us-east-1_d3Wusx6qp';
             const minervaClientId = 'cvuuuuogh6nmqm8491iiu1lh5';
-            const minervaPool = new CognitoUserPool({
+            const minervaPool = new AmazonCognitoIdentity.CognitoUserPool({
               UserPoolId : minervaPoolId,
               ClientId : minervaClientId
             });
 
-            const cognitoUser = new CognitoUser({
+            const cognitoUser = new AmazonCognitoIdentity.CognitoUser({
               Username: username,
               Pool: minervaPool
             });
 
-            const authenticationDetails = new AuthenticationDetails({
+            const authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails({
               Username: username,
               Password: password
             });
