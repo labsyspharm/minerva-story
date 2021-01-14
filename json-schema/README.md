@@ -1,6 +1,7 @@
 ```bash
 npm install doca -g
-doca init -o exhibit
+rm -rf exhibit
+doca init -i schema -o exhibit
 cd exhibit
 npm install
 npm run build
