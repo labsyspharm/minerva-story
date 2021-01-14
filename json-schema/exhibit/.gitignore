@@ -1,0 +1,7 @@
+*.json
+/*.js
+.babelrc
+.npmignore
+node_modules
+webpack
+src
