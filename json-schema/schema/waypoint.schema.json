@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Waypoint",
-  "description": "Specification of a waypoint",
+  "description": "Specification of a navigation point in an exhibit",
   "type": "object", 
   "definitions": {
     "arrow": {
