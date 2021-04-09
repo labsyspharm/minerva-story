@@ -9,12 +9,12 @@
       "type": "object",
       "properties": {
         "Point": {
-          "description": "The tail x, y coordinates as a fraction of the full width of image layout at given zoom",
+          "description": "The tail x, y coordinates as a fraction of the full height of image layout",
           "minItems": 2,
           "maxItems": 2,
           "type": "array",
           "items": {
-            "description": "Coordinate as a fraction of the full width of image layout at given zoom",
+            "description": "Coordinate as a fraction of the full height of image layout",
             "type": "number"
           }
         },
@@ -38,20 +38,20 @@
       "type": "object",
       "properties": {
         "x": {
-          "description": "Left of the rectangular overlay as a fraction of the full width of image layout at given zoom",
+          "description": "Left of the rectangular overlay as a fraction of the full height of image layout",
           "type": "number"
         },
         "y": {
-          "description": "Top of the rectangular overlay as a fraction of the full width of image layout at given zoom",
+          "description": "Top of the rectangular overlay as a fraction of the full height of image layout",
           "type": "number"
         },
         "width": {
-          "description": "Width of the rectangular overlay as a fraction of the full width of image layout at given zoom",
+          "description": "Width of the rectangular overlay as a fraction of the full height of image layout",
           "exclusiveMinimum": 0,
           "type": "number"
         },
         "height": {
-          "description": "Heigth of the rectangular overlay as a fraction of the full width of image layout at given zoom",
+          "description": "Heigth of the rectangular overlay as a fraction of the full height of image layout",
           "exclusiveMinimum": 0,
           "type": "number"
         }
@@ -188,12 +188,12 @@
       "type": "number"
     },
     "Pan": {
-      "description": "The center x, y coordinates as a fraction of the full width of image layout at given zoom",
+      "description": "The center x, y coordinates as a fraction of the full height of image layout",
       "minItems": 2,
       "maxItems": 2,
       "type": "array",
       "items": {
-        "description": "Coordinate as a fraction of the full width of image layout at given zoom",
+        "description": "Coordinate as a fraction of the full width of image layout",
         "type": "number"
       }
     },
