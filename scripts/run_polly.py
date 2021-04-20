@@ -2,7 +2,7 @@ import hashlib
 import pathlib
 import botocore
 import boto3
-import yaml
+import json
 import sys
 import time
 import argparse
@@ -54,17 +54,10 @@ def list_hash(bucket):
 def do_sha1(text):
     return hashlib.sha1(text.encode("utf-8")).hexdigest()
 
-def yield_paths(data_path):
-    yml_paths = data_path.glob('*/*.yml')
-    yaml_paths = data_path.glob('*/*.yaml')
-    for path in itertools.chain(yml_paths, yaml_paths):
-        yield path
-
 def yield_texts(paths):
     for path in paths:
         with open(path, 'r') as op:
-            parsed = yaml.load(op, Loader=yaml.FullLoader)
-            exhibit = parsed.get('Exhibit', {})
+            exhibit = json.load(op)
             stories = exhibit.get('Stories', [])
             header = exhibit.get('Header', '')
             if len(header):
@@ -92,7 +85,7 @@ if __name__ == "__main__":
         sys.exit(0)
 
     root = pathlib.Path(__file__).resolve().parents[1]
-    paths = [p for p in yield_paths(root / "_data")]
+    paths = [p for p in ['exhibit.json']]
     sha1_texts = {do_sha1(t):(p,k,t) for (p,k,t) in yield_texts(paths)}
 
     needed_sha1 = set(sha1_texts.keys())
