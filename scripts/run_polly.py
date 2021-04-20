@@ -73,8 +73,15 @@ if __name__ == "__main__":
     s3_client = boto3.client("s3")
     polly_client = boto3.client('polly')
     parser = argparse.ArgumentParser()
-    parser.add_argument("bucket")
+    parser.add_argument(
+        "bucket", metavar="bucket", help="Name of target public bucket on AWS S3.",
+    )
+    parser.add_argument(
+        "exhibit", metavar="exhibit", type=pathlib.Path, default=pathlib.Path('exhibit.json'),
+        help="Path to exhibit.json file with waypoints to convert to speech.",
+    )
     args = parser.parse_args()
+    exhibit_paths = [args.exhibit]
     bucket = args.bucket
 
     try:
@@ -85,7 +92,7 @@ if __name__ == "__main__":
         sys.exit(0)
 
     root = pathlib.Path(__file__).resolve().parents[1]
-    paths = [p for p in ['exhibit.json']]
+    paths = [p for p in exhibit_paths]
     sha1_texts = {do_sha1(t):(p,k,t) for (p,k,t) in yield_texts(paths)}
 
     needed_sha1 = set(sha1_texts.keys())
