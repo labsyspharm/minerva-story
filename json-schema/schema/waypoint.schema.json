@@ -220,7 +220,7 @@
       "description": "LZString encoded comma separated x, y coordinates of lasso-style polygon",
       "type": "string"
     },
-    "VisBarchart": {
+    "VisBarChart": {
       "$ref": "#/definitions/barchart"
     },
     "VisMatrix": {
