@@ -229,9 +229,6 @@
     "VisScatterplot": {
       "$ref": "#/definitions/scatterplot"
     },
-    "VisCanvasScatterplot": {
-      "$ref": "#/definitions/scatterplot"
-    },
     "Masks": {
       "description": "List of IDs of segmentation mask that can be activated for the current waypoint",
       "type": "array",
