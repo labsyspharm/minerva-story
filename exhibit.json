@@ -38,6 +38,13 @@
                 "\u03b1-SMA",
                 "CD45",
                 "IBA1"
+            ],
+            "Descriptions": [
+                "General marker of cell centers",
+                "Epithelial cell structure marker",
+                "Smooth muscle cell marker",
+                "Marker of T-cell activation",
+                "Marker for microglia/macrophages"
             ]
         },
         {
@@ -54,6 +61,12 @@
                 "Keratin",
                 "PD-L1",
                 "IBA1"
+            ],
+            "Descriptions": [
+                "General marker of cell centers",
+                "Epithelial cell structure marker",
+                "Marker of Tumor-Immune Interaction",
+                "Marker for microglia/macrophages"
             ]
         },
         {
@@ -68,6 +81,11 @@
                 "DNA",
                 "CD3d",
                 "CD20"
+            ],
+            "Descriptions": [
+                "General marker of cell centers",
+                "Marker of regulatory T-cells",
+                "Marker of B-cell localization"
             ]
         },
         {
@@ -84,6 +102,12 @@
                 "CD3d",
                 "CD4",
                 "FOXP3"
+            ],
+            "Descriptions": [
+                "General marker of cell centers",
+                "Marker of regulatory T-cells",
+                "Membrane marker of regulatory T-cells",
+                "Nuclear marker of regulatory T-cells"
             ]
         },
         {
@@ -98,6 +122,11 @@
                 "DNA",
                 "CD3d",
                 "CD8"
+            ],
+            "Descriptions": [
+                "General marker of cell centers",
+                "Marker of regulatory T-cells",
+                "Cytotoxic T-cell marker"
             ]
         },
         {
@@ -114,6 +143,12 @@
                 "CD3d",
                 "PD1",
                 "FOXP3"
+            ],
+            "Descriptions": [
+                "General marker of cell centers",
+                "Marker of regulatory T-cells",
+                "Inhibitory T-cell marker",
+                "Nuclear marker of regulatory T-cells"
             ]
         },
         {
@@ -130,6 +165,12 @@
                 "CD4",
                 "CD8A",
                 "FOXP3"
+            ],
+            "Descriptions": [
+                "General marker of cell centers",
+                "Membrane marker of regulatory T-cells",
+                "Marks rare subpopulations of T-cells",
+                "Nuclear marker of regulatory T-cells"
             ]
         },
         {
@@ -148,6 +189,13 @@
                 "CD8A",
                 "PD1",
                 "LAG3"
+            ],
+            "Descriptions": [
+                "General marker of cell centers",
+                "Membrane marker of regulatory T-cells",
+                "Marks rare subpopulations of T-cells",
+                "Inhibitory T-cell marker",
+                "Highly localized rare T-cell marker"
             ]
         },
         {
@@ -162,6 +210,11 @@
                 "IBA1",
                 "CD163",
                 "DNA"
+            ],
+            "Descriptions": [
+                "Marker for microglia/macrophages",
+                "Membrane marker of macrophages",
+                "General marker of cell centers"
             ]
         },
         {
@@ -178,6 +231,12 @@
                 "CD68",
                 "CD11B",
                 "CD14"
+            ],
+            "Descriptions": [
+                "General marker of cell centers",
+                "Marker of homing macrophages",
+                "Localized macrophage marker",
+                "Widespread macrophage marker"
             ]
         },
         {
@@ -188,6 +247,9 @@
             ],
             "Channels": [
                 "Hoechst"
+            ],
+            "Descriptions": [
+                "General marker of cell centers"
             ]
         },
         {
@@ -198,6 +260,9 @@
             ],
             "Channels": [
                 "KERATIN"
+            ],
+            "Descriptions": [
+                "Epithelial cell structure marker"
             ]
         },
         {
@@ -208,6 +273,9 @@
             ],
             "Channels": [
                 "ASMA"
+            ],
+            "Descriptions": [
+                "Smooth muscle cell marker"
             ]
         },
         {
@@ -218,6 +286,9 @@
             ],
             "Channels": [
                 "CD45"
+            ],
+            "Descriptions": [
+                "Marker of T-cell activation"
             ]
         },
         {
@@ -228,6 +299,9 @@
             ],
             "Channels": [
                 "IBA1"
+            ],
+            "Descriptions": [
+                "Marker for microglia/macrophages"
             ]
         },
         {
@@ -238,6 +312,9 @@
             ],
             "Channels": [
                 "PDL1"
+            ],
+            "Descriptions": [
+                "Marker of Tumor-Immune Interaction"
             ]
         },
         {
@@ -248,6 +325,9 @@
             ],
             "Channels": [
                 "CD3d"
+            ],
+            "Descriptions": [
+                "Marker of regulatory T-cells"
             ]
         },
         {
@@ -258,6 +338,9 @@
             ],
             "Channels": [
                 "CD20"
+            ],
+            "Descriptions": [
+                "Marker of B-cell localization"
             ]
         },
         {
@@ -268,6 +351,9 @@
             ],
             "Channels": [
                 "CD4"
+            ],
+            "Descriptions": [
+                "Membrane marker of regulatory T-cells"
             ]
         },
         {
@@ -278,6 +364,9 @@
             ],
             "Channels": [
                 "FOXP3"
+            ],
+            "Descriptions": [
+                "Nuclear marker of regulatory T-cells"
             ]
         },
         {
@@ -288,6 +377,9 @@
             ],
             "Channels": [
                 "CD8A"
+            ],
+            "Descriptions": [
+                "Marks rare subpopulations of T-cells"
             ]
         },
         {
@@ -298,6 +390,9 @@
             ],
             "Channels": [
                 "PD1"
+            ],
+            "Descriptions": [
+                "Inhibitory T-cell marker"
             ]
         },
         {
@@ -308,6 +403,9 @@
             ],
             "Channels": [
                 "CD163"
+            ],
+            "Descriptions": [
+                "Membrane marker of macrophages"
             ]
         },
         {
@@ -318,6 +416,9 @@
             ],
             "Channels": [
                 "CD68"
+            ],
+            "Descriptions": [
+                "Marker of homing macrophages"
             ]
         },
         {
@@ -328,6 +429,9 @@
             ],
             "Channels": [
                 "CD11B"
+            ],
+            "Descriptions": [
+                "Localized macrophage marker"
             ]
         },
         {
@@ -336,6 +440,9 @@
             "Colors": "CD14 - FF0000",
             "Channels": [
                 "CD14"
+            ],
+            "Descriptions": [
+                "Widespread macrophage marker"
             ]
         },
         {
@@ -346,6 +453,9 @@
             ],
             "Channels": [
                 "LAG3"
+            ],
+            "Descriptions": [
+                "Highly localized rare T-cell marker"
             ]
         }
     ],
@@ -358,6 +468,9 @@
             ],
             "Channels": [
                 "Tumor"
+            ],
+            "Descriptions": [
+                "Tumor Cell Cluster"
             ]
         },
         {
@@ -368,6 +481,9 @@
             ],
             "Channels": [
                 "Other"
+            ],
+            "Descriptions": [
+                "Other Cell Cluster"
             ]
         },
         {
@@ -378,6 +494,9 @@
             ],
             "Channels": [
                 "Immune"
+            ],
+            "Descriptions": [
+                "Immune Cell Cluster"
             ]
         },
         {
@@ -388,6 +507,9 @@
             ],
             "Channels": [
                 "Stromal"
+            ],
+            "Descriptions": [
+                "Stromal Cell Cluster"
             ]
         },
         {
@@ -398,6 +520,9 @@
             ],
             "Channels": [
                 "Segmentation"
+            ],
+            "Descriptions": [
+                "All Cell Segmentations"
             ]
         }
     ],
