@@ -187,6 +187,10 @@
       },
       "required": [ "Grid" ]
     },
+    "FirstGroup": {
+      "description": "ID of a marker group to render if no waypoints exist",
+      "type": "string"
+    },
     "DefaultGroup": {
       "description": "ID of a marker group to render when masks are activated",
       "type": "string"
