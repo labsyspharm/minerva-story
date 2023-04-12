@@ -9,7 +9,7 @@
             "MaxLevel": 7
         }
     ],
-    "Header": "",
+    "Header": "View an [H&E lens with multimodal lensing](#s=1w=0) a customized group of CyCIF channels. Click the settings icon to colorize or hide channels.",
     "Rotation": 0,
     "Layout": {
         "Grid": [
@@ -26,60 +26,6 @@
                 {
                     "Name": "Multimodal Lensing",
                     "Description": "---\n# H&E lens over group of CyCIF markers",
-                    "Lensing": {
-                        "Group": "H&E",
-                        "Rad": 150
-                    },
-                    "Arrows": [],
-                    "Overlays": [],
-                    "Group": "Overview",
-                    "Masks": [],
-                    "ActiveMasks": [],
-                    "Zoom": 1,
-                    "Pan": [
-                        0.5,
-                        0.5
-                    ]
-                },
-                {
-                    "Name": "Channel visibility",
-                    "Description": "---\n# Focusing on two CyCIF channels",
-                    "Lensing": {
-                        "Group": "H&E",
-                        "Rad": 150
-                    },
-                    "Arrows": [],
-                    "Overlays": [],
-                    "Group": "Overview",
-                    "Masks": [],
-                    "ActiveMasks": [],
-                    "Zoom": 1,
-                    "Pan": [
-                        0.5,
-                        0.5
-                    ]
-                },
-                {
-                    "Name": "Channel colorization",
-                    "Description": "---\n# Choosing a specific color palette",
-                    "Lensing": {
-                        "Group": "H&E",
-                        "Rad": 150
-                    },
-                    "Arrows": [],
-                    "Overlays": [],
-                    "Group": "Overview",
-                    "Masks": [],
-                    "ActiveMasks": [],
-                    "Zoom": 1,
-                    "Pan": [
-                        0.5,
-                        0.5
-                    ]
-                },
-                {
-                    "Name": "Exploration",
-                    "Description": "---\n# Closing the menu and zooming out",
                     "Lensing": {
                         "Group": "H&E",
                         "Rad": 150
