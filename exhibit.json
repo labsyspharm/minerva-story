@@ -1,1 +1,320 @@
-{"Images": [{"Name": "i0", "Description": "", "Path": "data/images/P37_S29-CRC01", "Width": 78417, "Height": 57360, "MaxLevel": 7}], "Header": "", "Rotation": 0, "Layout": {"Grid": [["i0"]]}, "Stories": [{"Name": "", "Description": "", "Waypoints": [{"Name": "", "Description": "", "Lensing": { "Group": "H&E", "Rad": 150 }, "Arrows": [], "Overlays": [], "Group": "Overview", "Masks": [], "ActiveMasks": [], "Zoom": 1, "Pan": [0.5, 0.5]}]}], "Channels": [{"Rendered": true, "Name": "Hematoxylin", "Path": "he"}, {"Rendered": true, "Name": "Eosin", "Path": "he"}, {"Name": "Hoechst", "Path": "Hoechst_0__Hoechst"}, {"Name": "Autofluorescence", "Path": "Autofluorescence_1__Autofluorescence"}, {"Name": "CD31", "Path": "CD31_2__CD31"}, {"Name": "alpha-SMA", "Path": "alpha-SMA_18__alpha-SMA"}, {"Name": "CD4", "Path": "CD4_6__CD4"}, {"Name": "FOXP3", "Path": "FOXP3_7__FOXP3"}, {"Name": "CD8a", "Path": "CD8a_8__CD8a"}, {"Name": "E-cadherin", "Path": "E-cadherin_14__E-cadherin"}, {"Name": "CD68", "Path": "CD68_4__CD68"}, {"Name": "PD-L1", "Path": "PD-L1_11__PD-L1"}, {"Name": "CD163", "Path": "CD163_13__CD163"}, {"Name": "Ki67", "Path": "Ki67_16__Ki67"}, {"Name": "CD45RO", "Path": "CD45RO_9__CD45RO"}, {"Name": "CD20", "Path": "CD20_10__CD20"}, {"Name": "CD3e", "Path": "CD3e_12__CD3e"}, {"Name": "PD-1", "Path": "PD-1_15__PD-1"}, {"Name": "CD45", "Path": "CD45_3__CD45"}, {"Name": "Pan-CK", "Path": "Pan-CK_17__Pan-CK"}], "Masks": [], "Groups": [{"Name": "H&E", "Colors": ["ff00ff", "800080"], "Channels": ["Hematoxylin", "Eosin"], "Descriptions": ["Hematoxylin brightfield", "Eosin brightfield"]}, {"Name": "Autofluorescence", "Colors": ["ffffff", "7fd1ff", "ffff00", "ff0000"], "Channels": ["Hoechst", "Autofluorescence", "CD31", "alpha-SMA"], "Descriptions": ["_", "_", "_", "_"]}, {"Name": "Immune 3", "Colors": ["ffffff", "ff4298", "ffb500", "00ff00", "007fff"], "Channels": ["Hoechst", "CD4", "FOXP3", "CD8a", "E-cadherin"], "Descriptions": ["_", "_", "_", "_", "_"]}, {"Name": "Immune 2", "Colors": ["ffffff", "00ff00", "ff00ff", "ffff00", "007fff"], "Channels": ["Hoechst", "CD68", "PD-L1", "CD163", "Ki67"], "Descriptions": ["_", "_", "_", "_", "_"]}, {"Name": "Immune 1", "Colors": ["ffffff", "ff9b00", "ff00ff", "0000ff", "00ff00"], "Channels": ["Hoechst", "CD45RO", "CD20", "CD3e", "PD-1"], "Descriptions": ["_", "_", "_", "_", "_"]}, {"Name": "Overview", "Colors": ["ffffff", "ffff00", "00ffff", "00ff00", "ff0000"], "Channels": ["Hoechst", "CD31", "CD45", "Pan-CK", "alpha-SMA"], "Descriptions": ["_", "_", "_", "_", "_"]}]}
+{
+    "Images": [
+        {
+            "Name": "i0",
+            "Description": "",
+            "Path": "data/images/P37_S29-CRC01",
+            "Width": 78417,
+            "Height": 57360,
+            "MaxLevel": 7
+        }
+    ],
+    "Header": "",
+    "Rotation": 0,
+    "Layout": {
+        "Grid": [
+            [
+                "i0"
+            ]
+        ]
+    },
+    "Stories": [
+        {
+            "Name": "",
+            "Description": "",
+            "Waypoints": [
+                {
+                    "Name": "Multimodal Lensing",
+                    "Description": "---\n# H&E lens over group of CyCIF markers",
+                    "Lensing": {
+                        "Group": "H&E",
+                        "Rad": 150
+                    },
+                    "Arrows": [],
+                    "Overlays": [],
+                    "Group": "Overview",
+                    "Masks": [],
+                    "ActiveMasks": [],
+                    "Zoom": 1,
+                    "Pan": [
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Name": "Channel visibility",
+                    "Description": "---\n# Focusing on two CyCIF channels",
+                    "Lensing": {
+                        "Group": "H&E",
+                        "Rad": 150
+                    },
+                    "Arrows": [],
+                    "Overlays": [],
+                    "Group": "Overview",
+                    "Masks": [],
+                    "ActiveMasks": [],
+                    "Zoom": 1,
+                    "Pan": [
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Name": "Channel colorization",
+                    "Description": "---\n# Choosing a specific color palette",
+                    "Lensing": {
+                        "Group": "H&E",
+                        "Rad": 150
+                    },
+                    "Arrows": [],
+                    "Overlays": [],
+                    "Group": "Overview",
+                    "Masks": [],
+                    "ActiveMasks": [],
+                    "Zoom": 1,
+                    "Pan": [
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Name": "Exploration",
+                    "Description": "---\n# Closing the menu and zooming out",
+                    "Lensing": {
+                        "Group": "H&E",
+                        "Rad": 150
+                    },
+                    "Arrows": [],
+                    "Overlays": [],
+                    "Group": "Overview",
+                    "Masks": [],
+                    "ActiveMasks": [],
+                    "Zoom": 1,
+                    "Pan": [
+                        0.5,
+                        0.5
+                    ]
+                }
+            ]
+        }
+    ],
+    "Channels": [
+        {
+            "Rendered": true,
+            "Name": "Hematoxylin",
+            "Path": "he"
+        },
+        {
+            "Rendered": true,
+            "Name": "Eosin",
+            "Path": "he"
+        },
+        {
+            "Name": "Hoechst",
+            "Path": "Hoechst_0__Hoechst"
+        },
+        {
+            "Name": "Autofluorescence",
+            "Path": "Autofluorescence_1__Autofluorescence"
+        },
+        {
+            "Name": "CD31",
+            "Path": "CD31_2__CD31"
+        },
+        {
+            "Name": "alpha-SMA",
+            "Path": "alpha-SMA_18__alpha-SMA"
+        },
+        {
+            "Name": "CD4",
+            "Path": "CD4_6__CD4"
+        },
+        {
+            "Name": "FOXP3",
+            "Path": "FOXP3_7__FOXP3"
+        },
+        {
+            "Name": "CD8a",
+            "Path": "CD8a_8__CD8a"
+        },
+        {
+            "Name": "E-cadherin",
+            "Path": "E-cadherin_14__E-cadherin"
+        },
+        {
+            "Name": "CD68",
+            "Path": "CD68_4__CD68"
+        },
+        {
+            "Name": "PD-L1",
+            "Path": "PD-L1_11__PD-L1"
+        },
+        {
+            "Name": "CD163",
+            "Path": "CD163_13__CD163"
+        },
+        {
+            "Name": "Ki67",
+            "Path": "Ki67_16__Ki67"
+        },
+        {
+            "Name": "CD45RO",
+            "Path": "CD45RO_9__CD45RO"
+        },
+        {
+            "Name": "CD20",
+            "Path": "CD20_10__CD20"
+        },
+        {
+            "Name": "CD3e",
+            "Path": "CD3e_12__CD3e"
+        },
+        {
+            "Name": "PD-1",
+            "Path": "PD-1_15__PD-1"
+        },
+        {
+            "Name": "CD45",
+            "Path": "CD45_3__CD45"
+        },
+        {
+            "Name": "Pan-CK",
+            "Path": "Pan-CK_17__Pan-CK"
+        }
+    ],
+    "Masks": [],
+    "Groups": [
+        {
+            "Name": "H&E",
+            "Colors": [
+                "ff00ff",
+                "800080"
+            ],
+            "Channels": [
+                "Hematoxylin",
+                "Eosin"
+            ],
+            "Descriptions": [
+                "Hematoxylin brightfield",
+                "Eosin brightfield"
+            ]
+        },
+        {
+            "Name": "Autofluorescence",
+            "Colors": [
+                "ffffff",
+                "7fd1ff",
+                "ffff00",
+                "ff0000"
+            ],
+            "Channels": [
+                "Hoechst",
+                "Autofluorescence",
+                "CD31",
+                "alpha-SMA"
+            ],
+            "Descriptions": [
+                "_",
+                "_",
+                "_",
+                "_"
+            ]
+        },
+        {
+            "Name": "Immune 3",
+            "Colors": [
+                "ffffff",
+                "ff4298",
+                "ffb500",
+                "00ff00",
+                "007fff"
+            ],
+            "Channels": [
+                "Hoechst",
+                "CD4",
+                "FOXP3",
+                "CD8a",
+                "E-cadherin"
+            ],
+            "Descriptions": [
+                "_",
+                "_",
+                "_",
+                "_",
+                "_"
+            ]
+        },
+        {
+            "Name": "Immune 2",
+            "Colors": [
+                "ffffff",
+                "00ff00",
+                "ff00ff",
+                "ffff00",
+                "007fff"
+            ],
+            "Channels": [
+                "Hoechst",
+                "CD68",
+                "PD-L1",
+                "CD163",
+                "Ki67"
+            ],
+            "Descriptions": [
+                "_",
+                "_",
+                "_",
+                "_",
+                "_"
+            ]
+        },
+        {
+            "Name": "Immune 1",
+            "Colors": [
+                "ffffff",
+                "ff9b00",
+                "ff00ff",
+                "0000ff",
+                "00ff00"
+            ],
+            "Channels": [
+                "Hoechst",
+                "CD45RO",
+                "CD20",
+                "CD3e",
+                "PD-1"
+            ],
+            "Descriptions": [
+                "_",
+                "_",
+                "_",
+                "_",
+                "_"
+            ]
+        },
+        {
+            "Name": "Overview",
+            "Colors": [
+                "ffffff",
+                "ffff00",
+                "00ffff",
+                "00ff00",
+                "ff0000"
+            ],
+            "Channels": [
+                "Hoechst",
+                "CD31",
+                "CD45",
+                "Pan-CK",
+                "alpha-SMA"
+            ],
+            "Descriptions": [
+                "nuclear marker",
+                "Endothelium (blood vessels)",
+                "All immune cells",
+                "Normal epithelium",
+                "blood vessels & subepithelial myofibroblasts"
+            ]
+        }
+    ]
+}
