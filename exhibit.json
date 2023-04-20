@@ -26,10 +26,24 @@
                 {
                     "Name": "Multimodal Lensing",
                     "Description": "---\n# H&E lens over group of CyCIF markers",
+                    "Arrows": [],
+                    "Overlays": [],
+                    "Group": "Overview",
+                    "Masks": [],
+                    "ActiveMasks": [],
+                    "Zoom": 1,
+                    "Pan": [
+                        0.5,
+                        0.5
+                    ],
                     "Lensing": {
-                        "Group": "H&E",
-                        "Rad": 150
-                    },
+                      "Group": "H&E",
+                      "Rad": 150
+                    }
+                },
+                {
+                    "Name": "Multimodal",
+                    "Description": "---\n# group of CyCIF markers",
                     "Arrows": [],
                     "Overlays": [],
                     "Group": "Overview",
@@ -241,7 +255,7 @@
         {
             "Name": "Overview",
             "Colors": [
-                "ffffff",
+                "ff00ff",
                 "ffff00",
                 "00ffff",
                 "00ff00",
