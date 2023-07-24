@@ -255,18 +255,16 @@
         {
             "Name": "Overview",
             "Colors": [
-                "0000ff",
+                "e0e0e0",
                 "ffff00",
-                "00ffff",
-                "00ff00",
-                "ff0000"
+                "ff8000",
+                "00ff00"
             ],
             "Channels": [
                 "Hoechst",
                 "CD31",
                 "CD45",
-                "Pan-CK",
-                "alpha-SMA"
+                "Pan-CK"
             ],
             "Descriptions": [
                 "nuclear marker",
