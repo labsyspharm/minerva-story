@@ -1,2 +1,278 @@
-{"FirstGroup":"STIC-2","FirstViewport":{"Zoom":10.644952754458025,"Pan":[0.1221,0.1587]},"Images":[{"Name":"i0","Description":"Ovarian Cancer with Annotation - LSP15327","Path":"https://s3.amazonaws.com/www.cycif.org/gray-stic-2","Width":44489,"Height":26902,"MaxLevel":6}],"Header":"This sample is from a patient (62 year old female) with ovarian cancer who underwent surgery to remove the ovaries and fallopian tubes (bilateral salpingo-oophorectomy; BSO), followed by chemotherapy treatment. Here we display the specimen from her surgery. This patient does not carry any BRCA mutation.\n\nUpon inspection of the specimen, the patient was diagnosed with a Stage IIA high-grade serous ovarian cancer (HGSOC). HGSOC was identified on her left fallopian tube, as well as her right ovary. Infiltrating cancer in the ovary will be shown in this specimen. \n\nThey also found pre-cancer lesions (serous tubal intraepithelial carcinoma; STIC) on the left fallopian tube. Serous tubal intraepithelial carcinoma (STIC) arises in the distal fimbriated end (Fimbriae) of the fallopian tube and likely represents a precursor lesion to HGSOC. Most STIC and HGSOC harbor TP53 mutation. \n\n## Metadata about this sample  \n\n### Diagnosis  \n**Age at diagnosis:**  62  \n**Primary diagnosis:**  HGSOC  \n**Surgery type:** bilateral salpingo-oophorectomy (BSO) + hysterectomy  \n**Stage at diagnosis:** IIA  \n**Fallopian involvement:**  Yes; Left FT (STIC, HGSOC)  \n**Ovarian involvement:** HGSOC (right)    \n**Genetic features (BRCA):** WT  \n**Molecular features:** N/A  \n**Metastatic sites:** Left adnexa and anterior uterine serosa; uterus with focal complex endometrial hyperplasia with atypia, bordering on well-differentiated endometrioid adenocarcinoma  \n\n\n### Demographics  \n**Species:** Human  \n**Sex:** Female  \n**Race:**  \n**Ethnicity:**  \n**Age at Surgery:** 62 years  \n**Vital status at last follow-up:**  \n**Age at last follow-up:**  \n\n### Clinical history\n**Cancer history:** No cancer history   \n**Prior therapeutic agents:** Not applicable   \n\n### Therapy\n**Treatment type:** Post-surgical chemotherapy  \n**Therapeutic agents:**  Taxol/Carboplatin, Carbo/Doxil followed by Olaparib. Due to cancer progression during treatment, the patient was treated further with Carboplatin - Niraparib 200mg - Doxil. The treatment duration was from 2013-2020.  \n\n### Imaging  \n**Imaging Assay Type:** t-CyCIF  \n**Fixative Type:** FFPE  \n**Microscope:** RareCyte CyteFinder 46\n**Objective:** 20x /0.75 NA  \n**Binned:** Yes  \n\n### Attribution \n**Please cite this Minerva Story as:**  \nKader, Tanjina, Lin, Jia-Ren and Coy, Shannon. Ovarian Cancer with Annotation - LSP15327. Harvard Dataverse. V1, 2023, [DOI](DOI).  \n\n### Sample Identifiers  \n|ID Type |\tID |\n|--|--|\n|**LSP Slide ID:**  |\tLSP15327 |\n| **UPenn ID:**  | Case ID-RD-23-001 |  \n\n--\n","Rotation":0,"Layout":{"Grid":[["i0"]]},"Stories":[{"Name":"","Description":"","Waypoints":[{"Name":"Orientation of the sample: Fallopian tube , pre-cancer lesion  and ovary","Description":"*Please note that this sample represents several disconnected segments of tissue.*\n\nWe have labeled different regions of the tissue, namely the normal fallopian tubes, the ovaries, and abnormal fallopian tubes. \n\nOn the right, the region of infiltrative carcinoma (high-grade serous ovarian cancer; HGSOC) is indicated in the rectangular white box at the surface of the ovary.\n\nOn the left, in the pre-cancerous STIC region, there is also some floating cancer (shown in white box). \n\nThe PanCK-positive regions indicate both normal epithelial tissue (i.e., within the normal fallopian tubes), as well as the STIC and HGSOC lesions.","Arrows":[{"Text":"Ovary","HideArrow":false,"Point":[1.4267756318864002,0.5152463056086077],"Angle":60},{"Text":"Ovary","HideArrow":false,"Point":[0.932286504689498,0.6713380814658417],"Angle":60},{"Text":"Normal Fallopian Tube","HideArrow":false,"Point":[1.1837015312431545,0.7464050965037988],"Angle":60},{"Text":"Fimbriae (distal end of Fallopian Tube)","HideArrow":false,"Point":[0.1268852166057255,0.7884399020296441],"Angle":60},{"Text":"Normal Fallopian Tube","HideArrow":false,"Point":[0.4039123235620165,0.8523069440376545],"Angle":60},{"Text":"Normal Fallopian Tube","HideArrow":false,"Point":[0.547944459485425,0.5622422411949174],"Angle":60},{"Text":"STIC","HideArrow":false,"Point":[0.14946371163536246,0.16467334698316105],"Angle":60},{"Text":"Normal Fallopian Tube","HideArrow":false,"Point":[0.4865628099739695,0.2537753008653286],"Angle":60}],"Overlays":[{"x":1.1431890599262235,"y":0.07556802597166667,"width":0.3455466190050642,"height":0.12034555116436974},{"x":0.9263288043618244,"y":0.39966691016101225,"width":0.14417632974824068,"height":0.1537086866354353},{"x":0.12951148109602473,"y":0.1843484517574649,"width":0.052374576095331665,"height":0.03353081690293322}],"Group":"STIC-2","Masks":[],"ActiveMasks":[],"Zoom":0.4774811681448938,"Pan":[0.6003933757198037,0.49329660660925456]},{"Name":"Invasive cancer on ovarian surface","Description":"PanCK-positive cells confirm that the cells are tumor cells. In this case, the tumor is located at the surface of the ovary. The cancer is annotated as \"*Infiltrating surface carcinoma*\". \n\nSome blood vessels and endothelial cells are identifiable as alpha-SMA-positive structures. ","Arrows":[],"Overlays":[{"x":1.2846103701432863,"y":0.12504382908479192,"width":0.06451747314963119,"height":0.04138242026798225}],"Group":"Tumor architecture","Masks":[],"ActiveMasks":[],"Zoom":2.5249103903225434,"Pan":[1.2629488896176315,0.16114653448051489]},{"Name":"Immune cells","Description":"There are numerous CD8 cytotoxic T cells and CD4 helper T cells  in the tumor.","Arrows":[],"Overlays":[{"x":1.3032881448767626,"y":0.1538376471753463,"width":0.00933485038386661,"height":0.006726847430229083}],"Group":"T cells","Masks":[],"ActiveMasks":[],"Zoom":28.957347662953858,"Pan":[1.3030723093688077,0.15980907307221343]},{"Name":"Myeloid cells","Description":"Apart from T cells, we can observe dendritic cells (CD11c-positive), which present antigen to T cells in this tumor. We also see macrophages, as indicated by cells where CD11c and CD68 co-localize.","Arrows":[],"Overlays":[{"x":1.1870433866112875,"y":0.16617364307231625,"width":0.005038105103185586,"height":0.0024304425730605206}],"Group":"Other immune cells","Masks":[],"ActiveMasks":[],"Zoom":41.14477136059957,"Pan":[1.1905118307552567,0.16771798682582553]},{"Name":"Precancer Lesion, STIC","Description":"Serous Tubal Intraepithelial carcinoma (STIC) arises in the distal fimbriated end of the fallopian tube and likely represents a precursor lesion to high-grade serous ovarian carcinoma. Arrows indicate the PanCK-positive STIC lesion. Some CD8+ cytotoxic T cells are present in the region, possibly indicating an initial immune response. Some M2 macrophages (CD163-positive) are also present, namely localized in the stromal region. ","Arrows":[{"Text":"","HideArrow":false,"Point":[0.13072510892705191,0.14936882896843756],"Angle":60},{"Text":"","HideArrow":false,"Point":[0.1405155277010095,0.16634048642504506],"Angle":60}],"Overlays":[],"Group":"STIC","Masks":[],"ActiveMasks":[],"Zoom":16.644952754458025,"Pan":[0.13264707702076212,0.15217727427703817]},{"Name":"Immune  cells of Normal Fallopian Tube","Description":"Normal fallopian tubes are enriched with tissue resident memory T cells (TRM), which are positive for both CD8 and CD103 (arrow heads point to cells where these markers co-localize). ","Arrows":[{"Text":"","HideArrow":false,"Point":[0.5480765916281457,0.485769200764225],"Angle":60},{"Text":"","HideArrow":false,"Point":[0.5642422743547012,0.4687442167104244],"Angle":60}],"Overlays":[],"Group":"Immune cells_ Fallopian Tube","Masks":[],"ActiveMasks":[],"Zoom":9.697757142353698,"Pan":[0.541900335360421,0.47798174720926784]},{"Name":"Immune cells of ovarian cancer","Description":"The immune cells near this ovarian tumor (PanCK-positive) are mostly CD163-positive M2 macrophages (red) and CD8-positive cytotoxic T cells. \n\nSome of these CD8-positive T cells are tissue resident memory T cells (TRM). You can toggle the channel group by clicking \"Immune Cells of the normal fallopian tube\" in the righthand column. ","Arrows":[],"Overlays":[],"Group":"Immune cells of Invasive carcinoma ","Masks":[],"ActiveMasks":[],"Zoom":13.657364878990705,"Pan":[0.9520812853568332,0.44977571839513897]},{"Name":"Tissue resident memory T cells of Fallopian Tube","Description":"Activated TRM cells are both PD1-positive and CD8-positive. This data may suggest that the TRM can recognize and be activated by antigen exposure.\n\nIn addition, a conventional activated cytotoxic T cell is shown in the white box (PD1+ CD8+). However, this T cell is not a TRM since it lacks CD103 expression.  ","Arrows":[{"Text":"","HideArrow":false,"Point":[0.5650836684841266,0.4673858886140435],"Angle":60}],"Overlays":[{"x":0.5660837837504743,"y":0.4762633735236331,"width":0.0023620943141348105,"height":0.002703975980312301}],"Group":"FT_TRM","Masks":[],"ActiveMasks":[],"Zoom":16.75772434198719,"Pan":[0.5684909408131699,0.47367060579251197]}]}],"Channels":[{"Rendered":false,"Name":"DNA","Path":"DNA_4__DNA"},{"Rendered":false,"Name":"CD8a","Path":"CD8a_11__CD8a"},{"Rendered":false,"Name":"CD163","Path":"CD163_36__CD163"},{"Rendered":false,"Name":"PanCK","Path":"PanCK-0_10__PanCK"},{"Rendered":false,"Name":"PD1","Path":"PD1_24__PD1"},{"Rendered":false,"Name":"CD103","Path":"CD103_20__CD103"},{"Rendered":false,"Name":"CD11c","Path":"CD11c_43__CD11c"},{"Rendered":false,"Name":"CD68","Path":"CD68_15__CD68"},{"Rendered":false,"Name":"CD4","Path":"CD4_14__CD4"},{"Rendered":false,"Name":"p53","Path":"p53_7__p53"},{"Rendered":false,"Name":"PanCK","Path":"PanCK-0_10__PanCK"},{"Rendered":false,"Name":"alpha-SMA","Path":"alpha-SMA_12__alpha-SMA"},{"Rendered":false,"Name":"PanCK","Path":"PanCK-0_10__PanCK"},{"Rendered":false,"Name":"PanCK","Path":"PanCK-0_10__PanCK"}],"Groups":[{"Name":"Immune cells of Invasive carcinoma ","Colors":["ffffff","ff00ff","00ffff","ff8300"],"Channels":["DNA","CD8a","CD163","PanCK"],"Descriptions":["","Cytotoxic T cells","M2 macrophage","epithelial marker"]},{"Name":"FT_TRM","Colors":["0000ff","ff00ff","00ffff"],"Channels":["DNA","CD8a","PD1"],"Descriptions":["","Cytotoxic T cells",""]},{"Name":"Immune cells_ Fallopian Tube","Colors":["ffffff","ff00ff","00ffff"],"Channels":["DNA","CD8a","CD103"],"Descriptions":["","Cytotoxic T cells","Tissue resident memory T cells"]},{"Name":"Other immune cells","Colors":["ffffff","00ffff","ff00ff"],"Channels":["DNA","CD11c","CD68"],"Descriptions":["","Dendritic cells if CD69 and CD163 negative","General Macrophage marker"]},{"Name":"T cells","Colors":["ffffff","ff00ff","00ffff"],"Channels":["DNA","CD8a","CD4"],"Descriptions":["","Cytotoxic T cells","Helper T cells"]},{"Name":"Tumor architecture","Colors":["ffffff","00ffff","ff8300","3f3fff"],"Channels":["DNA","p53","PanCK","alpha-SMA"],"Descriptions":["","HGSOC has a background TP53 mutation","epithelial marker",""]},{"Name":"STIC","Colors":["ffffff","00ffff","ff00ff","ff8300"],"Channels":["DNA","CD163","CD8a","PanCK"],"Descriptions":["","M2 macrophage","Cytotoxic T cells","epithelial marker"]},{"Name":"STIC-2","Colors":["ffffff","ff8300"],"Channels":["DNA","PanCK"],"Descriptions":["","epithelial marker"]}],"Masks":[]}
-
+{
+    "Images": [
+        {
+            "Name": "i0",
+            "Description": "",
+            "Path": "data/images/P37_S29-CRC01",
+            "Width": 78417,
+            "Height": 57360,
+            "MaxLevel": 7
+        }
+    ],
+    "Header": "View an [H&E lens with multimodal lensing](#s=1w=0) a customized group of CyCIF channels. Click the settings icon to colorize or hide channels.",
+    "Rotation": 0,
+    "Layout": {
+        "Grid": [
+            [
+                "i0"
+            ]
+        ]
+    },
+    "Stories": [
+        {
+            "Name": "",
+            "Description": "",
+            "Waypoints": [
+                {
+                    "Name": "Multimodal Lensing",
+                    "Description": "---\n# H&E lens over group of CyCIF markers",
+                    "Arrows": [],
+                    "Overlays": [],
+                    "Group": "Overview",
+                    "Masks": [],
+                    "ActiveMasks": [],
+                    "Zoom": 1,
+                    "Pan": [
+                        0.5,
+                        0.5
+                    ],
+                    "Lensing": {
+                      "Group": "H&E",
+                      "Rad": 150
+                    }
+                },
+                {
+                    "Name": "Multimodal",
+                    "Description": "---\n# group of CyCIF markers",
+                    "Arrows": [],
+                    "Overlays": [],
+                    "Group": "Overview",
+                    "Masks": [],
+                    "ActiveMasks": [],
+                    "Zoom": 1,
+                    "Pan": [
+                        0.5,
+                        0.5
+                    ]
+                }
+            ]
+        }
+    ],
+    "Channels": [
+        {
+            "Rendered": true,
+            "Name": "Hematoxylin",
+            "Path": "he"
+        },
+        {
+            "Rendered": true,
+            "Name": "Eosin",
+            "Path": "he"
+        },
+        {
+            "Name": "Hoechst",
+            "Path": "Hoechst_0__Hoechst"
+        },
+        {
+            "Name": "Autofluorescence",
+            "Path": "Autofluorescence_1__Autofluorescence"
+        },
+        {
+            "Name": "CD31",
+            "Path": "CD31_2__CD31"
+        },
+        {
+            "Name": "alpha-SMA",
+            "Path": "alpha-SMA_18__alpha-SMA"
+        },
+        {
+            "Name": "CD4",
+            "Path": "CD4_6__CD4"
+        },
+        {
+            "Name": "FOXP3",
+            "Path": "FOXP3_7__FOXP3"
+        },
+        {
+            "Name": "CD8a",
+            "Path": "CD8a_8__CD8a"
+        },
+        {
+            "Name": "E-cadherin",
+            "Path": "E-cadherin_14__E-cadherin"
+        },
+        {
+            "Name": "CD68",
+            "Path": "CD68_4__CD68"
+        },
+        {
+            "Name": "PD-L1",
+            "Path": "PD-L1_11__PD-L1"
+        },
+        {
+            "Name": "CD163",
+            "Path": "CD163_13__CD163"
+        },
+        {
+            "Name": "Ki67",
+            "Path": "Ki67_16__Ki67"
+        },
+        {
+            "Name": "CD45RO",
+            "Path": "CD45RO_9__CD45RO"
+        },
+        {
+            "Name": "CD20",
+            "Path": "CD20_10__CD20"
+        },
+        {
+            "Name": "CD3e",
+            "Path": "CD3e_12__CD3e"
+        },
+        {
+            "Name": "PD-1",
+            "Path": "PD-1_15__PD-1"
+        },
+        {
+            "Name": "CD45",
+            "Path": "CD45_3__CD45"
+        },
+        {
+            "Name": "Pan-CK",
+            "Path": "Pan-CK_17__Pan-CK"
+        }
+    ],
+    "Masks": [],
+    "Groups": [
+        {
+            "Name": "H&E",
+            "Colors": [
+                "ff00ff",
+                "800080"
+            ],
+            "Channels": [
+                "Hematoxylin",
+                "Eosin"
+            ],
+            "Descriptions": [
+                "Hematoxylin brightfield",
+                "Eosin brightfield"
+            ]
+        },
+        {
+            "Name": "Autofluorescence",
+            "Colors": [
+                "ffffff",
+                "7fd1ff",
+                "ffff00",
+                "ff0000"
+            ],
+            "Channels": [
+                "Hoechst",
+                "Autofluorescence",
+                "CD31",
+                "alpha-SMA"
+            ],
+            "Descriptions": [
+                "_",
+                "_",
+                "_",
+                "_"
+            ]
+        },
+        {
+            "Name": "Immune 3",
+            "Colors": [
+                "ffffff",
+                "ff4298",
+                "ffb500",
+                "00ff00",
+                "007fff"
+            ],
+            "Channels": [
+                "Hoechst",
+                "CD4",
+                "FOXP3",
+                "CD8a",
+                "E-cadherin"
+            ],
+            "Descriptions": [
+                "_",
+                "_",
+                "_",
+                "_",
+                "_"
+            ]
+        },
+        {
+            "Name": "Immune 2",
+            "Colors": [
+                "ffffff",
+                "00ff00",
+                "ff00ff",
+                "ffff00",
+                "007fff"
+            ],
+            "Channels": [
+                "Hoechst",
+                "CD68",
+                "PD-L1",
+                "CD163",
+                "Ki67"
+            ],
+            "Descriptions": [
+                "_",
+                "_",
+                "_",
+                "_",
+                "_"
+            ]
+        },
+        {
+            "Name": "Immune 1",
+            "Colors": [
+                "ffffff",
+                "ff9b00",
+                "ff00ff",
+                "0000ff",
+                "00ff00"
+            ],
+            "Channels": [
+                "Hoechst",
+                "CD45RO",
+                "CD20",
+                "CD3e",
+                "PD-1"
+            ],
+            "Descriptions": [
+                "_",
+                "_",
+                "_",
+                "_",
+                "_"
+            ]
+        },
+        {
+            "Name": "Overview",
+            "Colors": [
+                "e0e0e0",
+                "ffff00",
+                "ff8000",
+                "00ff00"
+            ],
+            "Channels": [
+                "Hoechst",
+                "CD31",
+                "CD45",
+                "Pan-CK"
+            ],
+            "Descriptions": [
+                "nuclear marker",
+                "Endothelium (blood vessels)",
+                "All immune cells",
+                "Normal epithelium",
+                "blood vessels & subepithelial myofibroblasts"
+            ]
+        }
+    ]
+}
