@@ -1,7 +1,0 @@
-exhibit/*.json
-exhibit/*.js
-exhibit/.babelrc
-exhibit/.npmignore
-exhibit/node_modules
-exhibit/webpack
-exhibit/src
