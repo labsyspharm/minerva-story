@@ -11,7 +11,6 @@
     License ....... Creative Commmons Attribution 3.0
     License URL ... https://github.com/typeplate/starter-kit/blob/master/license.txt
     */
-
       h1,
       h2,
       h3,
@@ -211,7 +210,7 @@
 
       /* Add transition to containers so they can push in and out. */
 
-      #layout,
+      #wrapper,
       #menu,
       .menu-link {
         -webkit-transition: all 0.2s ease-out;
@@ -223,17 +222,17 @@
 
       /* This is the parent `<div>` that contains the menu and the content area. */
 
-      #layout {
+      #wrapper {
         position: relative;
         padding-left: 0;
       }
 
-      #layout.active #menu {
+      #wrapper.active #menu {
         left: 250px;
         width: 250px;
       }
 
-      #layout.active .menu-link {
+      #wrapper.active .menu-link {
         left: 250px;
       }
 
@@ -245,7 +244,27 @@
         max-width: 80ex;
         line-height: 1.6em;
       }
-
+      .content > p {
+        display: none;
+      }
+      .content > ul {
+        grid-template-columns: auto auto 1fr;
+        gap: 1em;
+        display: grid;
+        list-style: none;
+        margin-left: 0;
+        padding-left: 0;
+      }
+      .content > ul > li {
+        display: contents;
+      }
+      .content > ul > li > p {
+        align-items: center;
+        display: grid;
+      }
+      .content > ul > li:last-child > p {
+        order: -1;
+      }
       /*
       The `#menu` `<div>` is the parent `<div>` that contains the menu that
       appears on the left side of the page.
@@ -405,7 +424,7 @@
           padding-right: 2em;
         }
 
-        #layout {
+        #wrapper {
           padding-left: 250px;
           /* left col width "#menu" */
           left: 0;
@@ -420,7 +439,7 @@
           display: none;
         }
 
-        #layout.active .menu-link {
+        #wrapper.active .menu-link {
           left: 250px;
         }
       }
@@ -431,7 +450,7 @@
          * Tap the menu to trigger the active state.
          * Make the window large again.
          */
-        #layout.active {
+        #wrapper.active {
           position: relative;
           left: 250px;
         }
@@ -469,7 +488,7 @@
   </head>
 
   <body>
-    <div id="layout">
+    <div id="wrapper">
       <!-- Menu toggle -->
       <a href="#menu" id="menuLink" class="menu-link">
         <!-- Hamburger icon -->
@@ -478,63 +497,62 @@
       <nav id="menu">
         <ul>
 <li><a class="" href="index.html">index</a></li>
-<li><a class="" href="channels-items.html">channels items</a></li>
-<li><a class="" href="groups-items.html">groups items</a></li>
-<li><a class="" href="images-items.html">images items</a></li>
-<li><a class="" href="stories-items-properties-waypoints-items.html">stories items properties waypoints items</a></li>
-<li><a class="active" href="stories-items.html">stories items</a></li>
+<li><a class="" href="channels.html">channels</a></li>
+<li><a class="active" href="groups.html">groups</a></li>
+<li><a class="" href="images.html">images</a></li>
+<li><a class="" href="stories.html">stories</a></li>
+<li><a class="" href="waypoints.html">waypoints</a></li>
 </ul>
       </nav>
       <article id="main" class="content">
-        <h2 id="items-type">items Type <a class="heading-anchor-permalink" href="#items-type">#</a></h2>
-<p><code>object</code> (<a href="index-properties-stories-items.html">Details</a>)</p>
-<h1 id="items-properties">items Properties <a class="heading-anchor-permalink" href="#items-properties">#</a></h1>
+        <h1 id=""> <a class="heading-anchor-permalink" href="#">#</a></h1>
 <h2 id="name">Name <a class="heading-anchor-permalink" href="#name">#</a></h2>
 <p><code>Name</code></p>
 <ul>
 <li>
-<p>is required</p>
+<p>required</p>
 </li>
 <li>
-<p>cannot be null</p>
+<p>Type: <code>string</code></p>
 </li>
 </ul>
-<h3 id="name-type">Name Type <a class="heading-anchor-permalink" href="#name-type">#</a></h3>
-<p><code>string</code> (<a href="index-properties-stories-items-properties-name.html">Name</a>)</p>
-<h2 id="description">Description <a class="heading-anchor-permalink" href="#description">#</a></h2>
-<p><code>Description</code></p>
+<h2 id="colors">Colors <a class="heading-anchor-permalink" href="#colors">#</a></h2>
+<p><code>Colors</code></p>
 <ul>
 <li>
-<p>is required</p>
+<p>required</p>
 </li>
 <li>
-<p>cannot be null</p>
+<p>Type: <code>string[]</code></p>
 </li>
 </ul>
-<h3 id="description-type">Description Type <a class="heading-anchor-permalink" href="#description-type">#</a></h3>
-<p><code>string</code> (<a href="index-properties-stories-items-properties-description.html">Description</a>)</p>
-<h2 id="waypoints">Waypoints <a class="heading-anchor-permalink" href="#waypoints">#</a></h2>
-<p><code>Waypoints</code></p>
+<h2 id="channels">Channels <a class="heading-anchor-permalink" href="#channels">#</a></h2>
+<p><code>Channels</code></p>
 <ul>
 <li>
-<p>is required</p>
+<p>required</p>
 </li>
 <li>
-<p>cannot be null</p>
+<p>Type: <code>string[]</code></p>
 </li>
 </ul>
-<h3 id="waypoints-type">Waypoints Type <a class="heading-anchor-permalink" href="#waypoints-type">#</a></h3>
-<p><code>object[]</code> (<a href="index-properties-stories-items-properties-waypoints-items.html">Details</a>)</p>
+<h2 id="descriptions">Descriptions <a class="heading-anchor-permalink" href="#descriptions">#</a></h2>
+<p><code>Descriptions</code></p>
+<ul>
+<li>
+<p>required</p>
+</li>
+<li>
+<p>Type: <code>string[]</code></p>
+</li>
+</ul>
 
       </article>
     </div>
     <script>
-      // Load contents.json if you need it
-    </script>
-    <script>
       // FROM http://purecss.io/js/ui.js
       (function(window, document) {
-        var layout = document.getElementById("layout"),
+        var wrapper = document.getElementById("wrapper"),
           menu = document.getElementById("menu"),
           menuLink = document.getElementById("menuLink");
 
@@ -561,7 +579,7 @@
           var active = "active";
 
           e.preventDefault();
-          toggleClass(layout, active);
+          toggleClass(wrapper, active);
           toggleClass(menu, active);
           toggleClass(menuLink, active);
         };

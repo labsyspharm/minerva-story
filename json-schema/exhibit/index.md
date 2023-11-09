@@ -1,7 +1,3 @@
-## Exhibit Type
-
-`object` ([Exhibit](index.md))
-
 # Exhibit Properties
 
 
@@ -12,15 +8,9 @@
 
 `Images`
 
-*   is required
+*   required
 
-*   cannot be null
-
-
-
-### Images Type
-
-`object[]` ([Details](index-properties-images-items.md))
+*   Type: `object[]` 
 
 ## Header
 
@@ -28,15 +18,9 @@
 
 `Header`
 
-*   is required
+*   required
 
-*   cannot be null
-
-
-
-### Header Type
-
-`string` ([Header](index-properties-header.md))
+*   Type: `string` 
 
 ## Rotation
 
@@ -44,15 +28,9 @@
 
 `Rotation`
 
-*   is required
+*   required
 
-*   cannot be null
-
-
-
-### Rotation Type
-
-`integer` ([Rotation](index-properties-rotation.md))
+*   Type: `integer` 
 
 ## Layout
 
@@ -60,15 +38,9 @@
 
 `Layout`
 
-*   is required
+*   required
 
-*   cannot be null
-
-
-
-### Layout Type
-
-`object` ([Layout](index-properties-layout.md))
+*   Type: `object` 
 
 ## Stories
 
@@ -76,15 +48,9 @@
 
 `Stories`
 
-*   is required
+*   required
 
-*   cannot be null
-
-
-
-### Stories Type
-
-`object[]` ([Details](index-properties-stories-items.md))
+*   Type: `object[]` 
 
 ## Channels
 
@@ -92,15 +58,9 @@
 
 `Channels`
 
-*   is required
+*   required
 
-*   cannot be null
-
-
-
-### Channels Type
-
-`object[]` ([Details](index-properties-channels-items.md))
+*   Type: `object[]` 
 
 ## Masks
 
@@ -108,15 +68,9 @@
 
 `Masks`
 
-*   is required
+*   required
 
-*   cannot be null
-
-
-
-### Masks Type
-
-`array` ([Masks](index-properties-masks.md))
+*   Type: `array` 
 
 ## Groups
 
@@ -124,12 +78,6 @@
 
 `Groups`
 
-*   is required
+*   required
 
-*   cannot be null
-
-
-
-### Groups Type
-
-`object[]` ([Details](index-properties-groups-items.md))
+*   Type: `object[]` 
